@@ -4,4 +4,6 @@ editor: visual
 ---
 
 This week is about Xaringan and Quarto 
+
+
 1 2 3 4 5
