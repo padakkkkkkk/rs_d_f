@@ -67,8 +67,15 @@ removes the scattering and absorption effects from the atmosphere to obtain the 
     + Topographic attenuation   
     + ...
 
-* Correction Steps
+* Correction Methods
 
+Methods can be divided into 2 types according to the results of the correction
+
+Relative atmospheric correction method: for example the dark object subtraction (DOS), histogram adjustment and psuedo-invariant features (PIFs)
+
+Absolute atmospheric correction method: there are some transfer models or codes such as MODTRAN 4+ and 6S can be used to deal with scattering and absorption, this is called model-based atmospheric correction methods. We can also use the empirical line correction by take measurements in site using a field spectrometer.
+
+* Topographic Correction
 
 
 
