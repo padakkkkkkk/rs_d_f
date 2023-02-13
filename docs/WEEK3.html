@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yuyang Wu">
-<meta name="dcterms.date" content="2023-01-26">
 
-<title>巫雨洋的学习日记</title>
+<title>巫雨洋的学习日记 - 3&nbsp; WEEK3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./WEEK1.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./WEEK2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,7 +60,11 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -71,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">巫雨洋的学习日记</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WEEK3</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -96,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -111,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./WEEK3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WEEK3</span></a>
+  <a href="./WEEK3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WEEK3</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -128,7 +131,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link active" data-scroll-target="#key-points"><span class="toc-section-number">3.1</span>  Key Points</a>
+  <ul class="collapse">
+  <li><a href="#correction" id="toc-correction" class="nav-link" data-scroll-target="#correction"><span class="toc-section-number">3.1.1</span>  Correction</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -137,37 +143,111 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">巫雨洋的学习日记</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WEEK3</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Yuyang Wu </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 26, 2023</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Learning Diary for CASA0023</p>
+<section id="key-points" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="key-points"><span class="header-section-number">3.1</span> Key Points</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/31.webp" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">sensor and image</figcaption><p></p>
+</figure>
+</div>
+<p>Here shows a basic flow of how remote sensing is used in practice, it includes a few steps from data collection. As there are many factors influencing the RS image acquisition like, sensor characteristics, weather (particularly cloud cover), acquisition method (satellite or airborne) and others, remotely sensed images can contain flaws within them. Therefore, to improve image quality as a basis for further analysis, the most common step is carrying out <strong>corrections</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A(Acquisition) --&gt; B(Pre-processing)
+  B --&gt; C(Image Analysis)
+  C --&gt; D(Products)
+  D --&gt; E(Application)
+
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<section id="correction" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="correction"><span class="header-section-number">3.1.1</span> Correction</h3>
+<p>To talking about this processing chain we can introduce the product levels. And we will summary some main points about each correction.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/32.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">correction and product levels</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Geometric Correction</strong></p>
+<ul>
+<li>Causes
+<ul>
+<li>Curvature of the earth<br>
+</li>
+<li>Topography of the terrain<br>
+</li>
+<li>Earth rotation<br>
+</li>
+<li>View angle (off-nadir)<br>
+</li>
+<li>…</li>
+</ul></li>
+<li>Correction Steps</li>
+</ul>
+<p>Acquisition of ground control points (GCP) : Use Ground Control Points (GCP) as a reference point for correct location data</p>
+<p>Building a Sensor Model: formulate the relation between the current and the reference location data</p>
+<p>Coordinate Transformation: Once a suitable sensor model is defined it can be applied to the image raw data to calculate the corrected coordinates of the pixel locations</p>
+<p>Resampling of Pixel Values: The coordinate transformations shifts and rotates the pixel locations. These new locations do not fit into a regular grid of the raster files. Therefore, the pixel values need to be resampled to assign each grid cell one raster values.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+What is a ground control point (GCP)?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ground Control Points (GCPs) are defined as points on the surface of the earth of known location used to geo-reference Landsat Level-1 data. GCPs are updated as needed to continually improve Landsat data. GCPs can be <a href="https://www.usgs.gov/landsat-missions/ground-control-points">downloaded</a> and used as reference data.</p>
+</div>
+</div>
+<ul>
+<li>Examining the Accuracy</li>
+</ul>
+<p>Root mean squared error can be used to measure the difference between locations that are known and locations that have been interpolated or digitized or resampled. <span class="math display">\[\begin{equation}
+RMS_{error}=\sqrt{(X^{'}-X_{orig}+Y^{'}-Y_{orig})^2}
+\end{equation}\]</span></p>
+<p><strong>Atmospheric Correction</strong></p>
+<p>removes the scattering and absorption effects from the atmosphere to obtain the surface reflectance characterizing (surface properties)</p>
+<ul>
+<li>Causes
+<ul>
+<li>Atmospheric scattering</li>
+<li>Atmospheric reflections</li>
+<li>Topographic attenuation<br>
+</li>
+<li>…</li>
+</ul></li>
+<li>Correction Steps</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -271,10 +351,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./WEEK2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">WEEK2</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./WEEK1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">WEEK1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,74 @@
+---
+title: "WEEK3"
+editor: visual
+---
+## Key Points
+
+![sensor and image](image/31.webp)
+
+Here shows a basic flow of how remote sensing is used in practice, it includes a few steps from data collection. As there are many factors influencing the RS image acquisition like, sensor characteristics, weather (particularly cloud cover), acquisition method (satellite or airborne) and others, remotely sensed images can contain flaws within them. Therefore, to improve image quality as a basis for further analysis, the most common step is carrying out **corrections**.
+
+```{mermaid}
+flowchart LR
+  A(Acquisition) --> B(Pre-processing)
+  B --> C(Image Analysis)
+  C --> D(Products)
+  D --> E(Application)
+
+```
+
+### Correction 
+
+To talking about this processing chain we can introduce the product levels. And we will summary some main points about each correction.
+
+![correction and product levels](image/32.png)
+
+**Geometric Correction**
+
+* Causes
+    + Curvature of the earth      
+    + Topography of the terrain   
+    + Earth rotation              
+    + View angle (off-nadir)      
+    + ...
+
+* Correction Steps
+
+Acquisition of ground control points (GCP) : Use Ground Control Points (GCP) as a reference point for correct location data
+
+Building a Sensor Model: formulate the relation between the current and the reference location data
+
+Coordinate Transformation: Once a suitable sensor model is defined it can be applied to the image raw data to calculate the corrected coordinates of the pixel locations 
+
+Resampling of Pixel Values: The coordinate transformations shifts and rotates the pixel locations. These new locations do not fit into a regular grid of the raster files. Therefore, the pixel values need to be resampled to assign each grid cell one raster values. 
+
+::: callout-note
+# What is a ground control point (GCP)?
+
+Ground Control Points (GCPs) are defined as points on the surface of the earth of known location used to geo-reference Landsat Level-1 data. GCPs are updated as needed to continually improve Landsat data. GCPs can be [downloaded](https://www.usgs.gov/landsat-missions/ground-control-points) and used as reference data.
+
+:::
+
+
+*  Examining the Accuracy
+
+Root mean squared error can be used to measure the difference between locations that are known and locations that have been interpolated or digitized or resampled.
+\begin{equation}
+RMS_{error}=\sqrt{(X^{'}-X_{orig}+Y^{'}-Y_{orig})^2}
+\end{equation}
+
+**Atmospheric Correction**
+
+removes the scattering and absorption effects from the atmosphere to obtain the surface reflectance characterizing (surface properties)
+
+* Causes
+    + Atmospheric scattering 
+    + Atmospheric reflections
+    + Topographic attenuation   
+    + ...
+
+* Correction Steps
+
+
+
+
