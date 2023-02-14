@@ -89,7 +89,7 @@ Be careful that different RS data may have different meanings for the band with 
 For Sentinel 2 data：
 
 | Types          | RGB channels | description                                                                                    |
-|--------------------------|------------------------|-----------------------|
+|-------------|-------------|-----------------------|
 | Natural Color  | B4, B3, B2   | display imagery the same way our eyes see the world                                            |
 | Color Infrared | B8, B4, B3   | emphasize healthy and unhealthy vegetation. denser vegetation is red,but urban areas are white |
 | Agriculture    | B11,B8,B2    | used to monitor the health of crops,highlighting dense vegetation that appears as dark green   |
@@ -100,7 +100,7 @@ For Sentinel 2 data：
 For Landsat 5 TM data：
 
 | Types                | RGB channels | description                                                                                    |
-|--------------------------|------------------------|-----------------------|
+|-------------|-------------|-----------------------|
 | Natural Color        | B3, B2, B1   | display imagery the same way our eyes see the world                                            |
 | Standard false color | B4, B3, B2   | emphasize healthy and unhealthy vegetation. denser vegetation is red,but urban areas are white |
 | simulated true color | B7,B4,B3     | Identify residential land and water bodies                                                     |

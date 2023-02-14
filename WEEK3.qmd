@@ -6,6 +6,8 @@ editor: visual
 
 ![sensor and image](image/31.webp)
 
+### Correction 
+
 Here shows a basic flow of how remote sensing is used in practice, it includes a few steps from data collection. As there are many factors influencing the RS image acquisition like, sensor characteristics, weather (particularly cloud cover), acquisition method (satellite or airborne) and others, remotely sensed images can contain flaws within them. Therefore, to improve image quality as a basis for further analysis, the most common step is carrying out **corrections**.
 
 ```{mermaid}
@@ -17,11 +19,41 @@ flowchart LR
 
 ```
 
-### Correction 
 
 To talking about this processing chain we can introduce the product levels. And we will summary some main points about each correction.
 
 ![correction and product levels](image/32.png)
+
+These are some website helpful to understand each process, 
+
+[The Importance of Radiometric Calibration](https://support.micasense.com/hc/en-us/articles/115002327753-The-Importance-of-Radiometric-Calibration)
+
+[Geometric Corrections in Remote Sensed Image](https://geolearn.in/geometric-corrections-in-remote-sensing-images/)
+
+[What is Atmospheric Correction in Remote Sensing?](https://gisgeography.com/atmospheric-correction/)
+
+and following are some summaries. 
+
+
+**Radiometric Calibration**
+
+Radiometric Calibration refers to the ability to convert the digital numbers recorded by satellite imaging systems into to spectral radiance, reflectance, or brightness temperatures.
+
+The purpose is to eliminate the error of the sensor itself and determine the accurate radiation value at the entrance of the sensor. 
+
+Methods include laboratory calibration, on-board/satellite calibration, and site calibration. Note that different sensors have different radiation calibration formulas.
+
+::: callout-tip
+# How to tell if your imagery is lacking a radiometric workflow:
+
+Without radiometric calibration, you may see the following effects:
+
+* Underexposed images, especially surrounding bright objects on the landscape
+* Irregular coloration
+* Index values, such as NDVI, that appear to change dramatically and unexpectedly near roads or buildings
+* Extreme banding or patchiness in your mosaic
+
+:::
 
 **Geometric Correction**
 
@@ -69,13 +101,170 @@ removes the scattering and absorption effects from the atmosphere to obtain the 
 
 * Correction Methods
 
-Methods can be divided into 2 types according to the results of the correction
+Methods can be divided into 2 types according to the results of the correction:
 
-Relative atmospheric correction method: for example the dark object subtraction (DOS), histogram adjustment and psuedo-invariant features (PIFs)
+|Type|Notes|
+|-----|--------|
+|Relative atmospheric correction method|for example the dark object subtraction (DOS), histogram adjustment and psuedo-invariant features (PIFs)|
+|Absolute atmospheric correction method|there are some transfer models or codes such as MODTRAN 4+ and 6S can be used to deal with scattering and absorption, this is called model-based atmospheric correction methods. We can also use the empirical line correction by take measurements in site using a field spectrometer.|
 
-Absolute atmospheric correction method: there are some transfer models or codes such as MODTRAN 4+ and 6S can be used to deal with scattering and absorption, this is called model-based atmospheric correction methods. We can also use the empirical line correction by take measurements in site using a field spectrometer.
+:Atmospheric Correction
 
-* Topographic Correction
+**Orthorectification Correction**
+
+orthorectification is the process of improving the horizontal accuracy of imagery.
+
+* Causes
+    + Camera and sensor orientation 
+    + Topographic relief displacement
+    + Earth curvature   
+    + ...
+
+* Correction Methods
+
+We can use some orthorectification algorithms to deal with the distortion, also, softerwares like QGSIS and SAGA GIS can be helpful.
+
+::: callout-note
+# Orthorectification vs Georectification
+
+Georectify take an image that has not been adjusted to be in a known coordinate system, and put it into a known coordinate system.
+
+Orthorectify take an image in its original geometry and very accurately adjust it so that it is in a known coordinate system, with distortions due to topographic variation corrected.
+
+:::
+
+### Image Enhancements
+
+>Image enhancement algorithms are applied to remotely sensed data to improve the appearance of an image for human visual analysis or occasionally for subsequent machine analysis. There is no such thing as the ideal or best image enhancement because the results are ultimately evaluated by human.
+
+Image enhancement is attempted after the image is corrected for geometric and radiometric distortion. here we will summarize some of the most popular enhancements techniques.
+
+**Contrast Enhancement**
+
+* Why it is needed
+
+Most of the satellite images lack adequate contrast with nearly uniform tones of gray.This results in difficulty in interpret the image. Reasons for low contrast of image can be various. For example, the objects may have a nearly uniform electromagnetic response at the wavelength band of energy, scattering of electromagnetic energy by the atmosphere can reduce the contrast of a scene...
+
+* Principle
+
+Contrast enhancement techniquest (also referred to as contrast stretching) expand the range of brightness values in an image so that the image can be efficiently displayed in a manner desired by the analyst.
+
+* Methods/Examples
+
+Contrast enhancement techniques can be divided into 2 categories.
+
+|Type|Notes|
+|----|--------|
+|Linear Contrast Enhancement|including Minimum-Maximum Contrast Stretching, Percentage Linear and Standard Deviation Stretching,Piecewise Linear Contrast Stretching. They differ in the Stretching Function. Like the picture below shows how Minimum-Maximum Contrast Stretching works.|
+|Nonlinear contrast enhancement stretching|one applied of the most useful enhancements is histogram equalization. In this technique, histogram of the original image is redistributed to produce a uniform population density. The whole process can be a little complex, which can be found here at [Page 8](https://uotechnology.edu.iq/dep-building/LECTURE/emzaheam/9.IMP%20Lect.9.pdf)|
+
+:Contrast Enhancement
+
+![Linear contrast stretch versus histogram equalization](image/34.jpeg)
+
+**Band Ratioing**
+
+* Why it is needed
+
+Sometime differences in brightness value from identical surface materials are caused by topographic slope and aspect, shadow, or seasonal change in sun illumination angle and intensity. These conditions may hamper ability of interpreter or classification algorithm to identify correctly surface materials or land use in a remotely sensed image. We can use Band Ratios to enhance the spectral differences between bands and to reduce the effects of topography.
+
+* Principle
+
+Basically, Band Ratioing is about doing band algebra, dividing one spectral band by another produces an image that provides relative band intensities.The ratio is the numerator divided by the denominator
+
+* Methods/Examples
+
+There are many defined indexes show us the way to do band ratioing, such as The Normalised Difference Vegetation Index (NDVI) which is based on the fact that healthy and green vegetation reflects more in the NIR but absorbs in the Red wavelength.
+\begin{equation}
+NDVI=\frac{NIR-Red}{NIR+Red}
+\end{equation}
+
+There are many other ratios, all of which are detailed on the [Index Database](https://www.indexdatabase.de/)
+
+![The sunlight causes the different value of land cover, but the ratio is constant](image/35.png)
+
+**Spatial filtering**
+
+>A characteristic of remotely sensed image is a parameter called spatial frequency; defined as the number of changes in brightness value per unit distance for any particular part of an image.
+
+* Why it is needed
+
+Spatial filters serve a variety of purposes, such as detecting edges along a specific direction, contouring patterns, reducing noise, and detail outlining or smoothing. Filters smooth, sharpen, transform, and remove noise from an image so that you can extract the information you need.
+
+* Principle
+
+Spatial filtering applies the idea of convolution, which is an algorithm that consists of recalculating the value of a pixel based on its own pixel value and the pixel values of its neighbors weighted by the coefficients of a convolution kernel. Basically, to acheive Spatial Filtering we firstly decide a window, that is the size of the convolution kernel(3 × 3, 5 × 5...can be either square or rectangular). And according to different types of convolutions:gradient, Laplacian, smoothing, and Gaussian, different convolution kernel contents or the weight will be used to calculated the new value of the central kernel pixel.
+
+From the perspective of mathematical calculation, it is to construct a matrix, multiply the elements of the matrix by the value of the corresponding pixel, and then add up the products as the new value of the central pixel. Like the picture blew illustrates.
+
+![Example of Spatial filtering](image/36.png)
+
+* Methods/Examples
+
+Spatial filters fall into two categories:
+
+|Type|Notes|
+|-----|--------|
+|Highpass filters|emphasize significant variations of the light intensity usually found at the boundary of objects. Highpass frequency filters help isolate abruptly varying patterns that correspond to sharp edges, details, and noise.|
+|Lowpass filters|attenuate variations of the light intensity. Lowpass frequency filters help emphasize gradually varying patterns such as objects and the background. They have the tendency to smooth images by eliminating details and blurring edges.|
+
+:Spatial filtering
+
+Specific tye of Spatial Filter and its application can be found in [here](https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/spatial_filtering.html)
+
+There are also other way to process the image and gain information we needed, like **Texture**, **Data fusion** and **PCA**, here I am trying to use R language to achieved them. In addition, paying special attention on them in the application part.
+
+### Practice with R
+
+Here I will use R to achieve some enhancement methods. Firstly we use `pull()` to load our raster layers into a stack, then we can easily pick out one of the band.
+
+```r
+# List your raster files excluding band 8 using the patter argument
+m1<-dir_info(here::here("LC09_L2SP_203023_20220326_20220328_02_T1")) %>%
+  dplyr::filter(str_detect(path, "[1B23456790].TIF")) %>%
+  dplyr::select(path) %>%
+  pull() %>%
+  as.character() %>%
+  # Load our raster layers into a stack
+  terra::rast()
+```
+
+referring the equation given above, the NDVI can be calculated quickly,
+
+```r
+m1_NDVI <- (m1$LC09_L2SP_203023_20220326_20220328_02_T1_SR_B5 - m1$LC09_L2SP_203023_20220326_20220328_02_T1_SR_B4 ) / (m1$LC09_L2SP_203023_20220326_20220328_02_T1_SR_B5 + m1$LC09_L2SP_203023_20220326_20220328_02_T1_SR_B4)
+
+```
+![Figure of NDVI >0.2 the high value stands for the healty plant](image/NDVI2.png)
+
+and the [glcm](https://rdrr.io/cran/glcm/man/glcm.html) package can help us to do the Texture Analysis.
+
+```r
+glcm(x, n_grey = 32, window = c(3, 3), shift = c(1, 1), statistics = c("mean", "variance", "homogeneity", "contrast", "dissimilarity", "entropy", "second_moment", "correlation"), min_x=NULL, max_x=NULL, na_opt="any", na_val=NA, scale_factor=1, asinteger=FALSE)
+#statistics	means a list of GLCM texture measures to calculate
+
+```
+if we usd the `homogeneity` measure the results is shown blow
+
+![the homogeneity of the image](image/homogeneity.png)
+
+::: callout-note
+
+# Homogeneity texture measure
+Homogeneity was a measure of the similarity of pixel values in the neighborhood defined by the processing window, ranging from 0.0 (completely dissimilar) to 1.0 (all cells having equivalent values) [(Lane CR et al. 2014)](https://doi.org/10.3390/rs61212187)
+
+:::
+
+the video [Introduction to textural classification in QGIS 3.10](https://www.youtube.com/watch?v=g6RwF8J80Gg) shows basic concept of Texture Analysis as well as how to do it in QGIS.
+
+For PCA, [rasterPCA](https://rdrr.io/cran/RStoolbox/man/rasterPCA.html) can be helpful to reduce the dimensionality of our data.
+
+## Application
+
+
+## Reflection
+
+## Reference
 
 
 

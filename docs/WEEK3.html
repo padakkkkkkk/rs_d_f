@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -134,7 +197,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-points" id="toc-key-points" class="nav-link active" data-scroll-target="#key-points"><span class="toc-section-number">3.1</span>  Key Points</a>
   <ul class="collapse">
   <li><a href="#correction" id="toc-correction" class="nav-link" data-scroll-target="#correction"><span class="toc-section-number">3.1.1</span>  Correction</a></li>
+  <li><a href="#image-enhancements" id="toc-image-enhancements" class="nav-link" data-scroll-target="#image-enhancements"><span class="toc-section-number">3.1.2</span>  Image Enhancements</a></li>
+  <li><a href="#practice-with-r" id="toc-practice-with-r" class="nav-link" data-scroll-target="#practice-with-r"><span class="toc-section-number">3.1.3</span>  Practice with R</a></li>
   </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">3.2</span>  Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="toc-section-number">3.4</span>  Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -165,6 +233,8 @@ ul.task-list li input[type="checkbox"] {
 <p></p><figcaption class="figure-caption">sensor and image</figcaption><p></p>
 </figure>
 </div>
+<section id="correction" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="correction"><span class="header-section-number">3.1.1</span> Correction</h3>
 <p>Here shows a basic flow of how remote sensing is used in practice, it includes a few steps from data collection. As there are many factors influencing the RS image acquisition like, sensor characteristics, weather (particularly cloud cover), acquisition method (satellite or airborne) and others, remotely sensed images can contain flaws within them. Therefore, to improve image quality as a basis for further analysis, the most common step is carrying out <strong>corrections</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -184,14 +254,40 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<section id="correction" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="correction"><span class="header-section-number">3.1.1</span> Correction</h3>
 <p>To talking about this processing chain we can introduce the product levels. And we will summary some main points about each correction.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="image/32.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">correction and product levels</figcaption><p></p>
 </figure>
+</div>
+<p>These are some website helpful to understand each process,</p>
+<p><a href="https://support.micasense.com/hc/en-us/articles/115002327753-The-Importance-of-Radiometric-Calibration">The Importance of Radiometric Calibration</a></p>
+<p><a href="https://geolearn.in/geometric-corrections-in-remote-sensing-images/">Geometric Corrections in Remote Sensed Image</a></p>
+<p><a href="https://gisgeography.com/atmospheric-correction/">What is Atmospheric Correction in Remote Sensing?</a></p>
+<p>and following are some summaries.</p>
+<p><strong>Radiometric Calibration</strong></p>
+<p>Radiometric Calibration refers to the ability to convert the digital numbers recorded by satellite imaging systems into to spectral radiance, reflectance, or brightness temperatures.</p>
+<p>The purpose is to eliminate the error of the sensor itself and determine the accurate radiation value at the entrance of the sensor.</p>
+<p>Methods include laboratory calibration, on-board/satellite calibration, and site calibration. Note that different sensors have different radiation calibration formulas.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+How to tell if your imagery is lacking a radiometric workflow:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Without radiometric calibration, you may see the following effects:</p>
+<ul>
+<li>Underexposed images, especially surrounding bright objects on the landscape</li>
+<li>Irregular coloration</li>
+<li>Index values, such as NDVI, that appear to change dramatically and unexpectedly near roads or buildings</li>
+<li>Extreme banding or patchiness in your mosaic</li>
+</ul>
+</div>
 </div>
 <p><strong>Geometric Correction</strong></p>
 <ul>
@@ -245,15 +341,230 @@ RMS_{error}=\sqrt{(X^{'}-X_{orig}+Y^{'}-Y_{orig})^2}
 </ul></li>
 <li>Correction Methods</li>
 </ul>
-<p>Methods can be divided into 2 types according to the results of the correction</p>
-<p>Relative atmospheric correction method: for example the dark object subtraction (DOS), histogram adjustment and psuedo-invariant features (PIFs)</p>
-<p>Absolute atmospheric correction method: there are some transfer models or codes such as MODTRAN 4+ and 6S can be used to deal with scattering and absorption, this is called model-based atmospheric correction methods. We can also use the empirical line correction by take measurements in site using a field spectrometer.</p>
+<p>Methods can be divided into 2 types according to the results of the correction:</p>
+<table class="table">
+<caption>Atmospheric Correction</caption>
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Relative atmospheric correction method</td>
+<td>for example the dark object subtraction (DOS), histogram adjustment and psuedo-invariant features (PIFs)</td>
+</tr>
+<tr class="even">
+<td>Absolute atmospheric correction method</td>
+<td>there are some transfer models or codes such as MODTRAN 4+ and 6S can be used to deal with scattering and absorption, this is called model-based atmospheric correction methods. We can also use the empirical line correction by take measurements in site using a field spectrometer.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Orthorectification Correction</strong></p>
+<p>orthorectification is the process of improving the horizontal accuracy of imagery.</p>
 <ul>
-<li>Topographic Correction</li>
+<li>Causes
+<ul>
+<li>Camera and sensor orientation</li>
+<li>Topographic relief displacement</li>
+<li>Earth curvature<br>
+</li>
+<li>…</li>
+</ul></li>
+<li>Correction Methods</li>
 </ul>
-
-
+<p>We can use some orthorectification algorithms to deal with the distortion, also, softerwares like QGSIS and SAGA GIS can be helpful.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Orthorectification vs Georectification
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Georectify take an image that has not been adjusted to be in a known coordinate system, and put it into a known coordinate system.</p>
+<p>Orthorectify take an image in its original geometry and very accurately adjust it so that it is in a known coordinate system, with distortions due to topographic variation corrected.</p>
+</div>
+</div>
 </section>
+<section id="image-enhancements" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="image-enhancements"><span class="header-section-number">3.1.2</span> Image Enhancements</h3>
+<blockquote class="blockquote">
+<p>Image enhancement algorithms are applied to remotely sensed data to improve the appearance of an image for human visual analysis or occasionally for subsequent machine analysis. There is no such thing as the ideal or best image enhancement because the results are ultimately evaluated by human.</p>
+</blockquote>
+<p>Image enhancement is attempted after the image is corrected for geometric and radiometric distortion. here we will summarize some of the most popular enhancements techniques.</p>
+<p><strong>Contrast Enhancement</strong></p>
+<ul>
+<li>Why it is needed</li>
+</ul>
+<p>Most of the satellite images lack adequate contrast with nearly uniform tones of gray.This results in difficulty in interpret the image. Reasons for low contrast of image can be various. For example, the objects may have a nearly uniform electromagnetic response at the wavelength band of energy, scattering of electromagnetic energy by the atmosphere can reduce the contrast of a scene…</p>
+<ul>
+<li>Principle</li>
+</ul>
+<p>Contrast enhancement techniquest (also referred to as contrast stretching) expand the range of brightness values in an image so that the image can be efficiently displayed in a manner desired by the analyst.</p>
+<ul>
+<li>Methods/Examples</li>
+</ul>
+<p>Contrast enhancement techniques can be divided into 2 categories.</p>
+<table class="table">
+<caption>Contrast Enhancement</caption>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linear Contrast Enhancement</td>
+<td>including Minimum-Maximum Contrast Stretching, Percentage Linear and Standard Deviation Stretching,Piecewise Linear Contrast Stretching. They differ in the Stretching Function. Like the picture below shows how Minimum-Maximum Contrast Stretching works.</td>
+</tr>
+<tr class="even">
+<td>Nonlinear contrast enhancement stretching</td>
+<td>one applied of the most useful enhancements is histogram equalization. In this technique, histogram of the original image is redistributed to produce a uniform population density. The whole process can be a little complex, which can be found here at <a href="https://uotechnology.edu.iq/dep-building/LECTURE/emzaheam/9.IMP%20Lect.9.pdf">Page 8</a></td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/34.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Linear contrast stretch versus histogram equalization</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Band Ratioing</strong></p>
+<ul>
+<li>Why it is needed</li>
+</ul>
+<p>Sometime differences in brightness value from identical surface materials are caused by topographic slope and aspect, shadow, or seasonal change in sun illumination angle and intensity. These conditions may hamper ability of interpreter or classification algorithm to identify correctly surface materials or land use in a remotely sensed image. We can use Band Ratios to enhance the spectral differences between bands and to reduce the effects of topography.</p>
+<ul>
+<li>Principle</li>
+</ul>
+<p>Basically, Band Ratioing is about doing band algebra, dividing one spectral band by another produces an image that provides relative band intensities.The ratio is the numerator divided by the denominator</p>
+<ul>
+<li>Methods/Examples</li>
+</ul>
+<p>There are many defined indexes show us the way to do band ratioing, such as The Normalised Difference Vegetation Index (NDVI) which is based on the fact that healthy and green vegetation reflects more in the NIR but absorbs in the Red wavelength. <span class="math display">\[\begin{equation}
+NDVI=\frac{NIR-Red}{NIR+Red}
+\end{equation}\]</span></p>
+<p>There are many other ratios, all of which are detailed on the <a href="https://www.indexdatabase.de/">Index Database</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/35.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The sunlight causes the different value of land cover, but the ratio is constant</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Spatial filtering</strong></p>
+<blockquote class="blockquote">
+<p>A characteristic of remotely sensed image is a parameter called spatial frequency; defined as the number of changes in brightness value per unit distance for any particular part of an image.</p>
+</blockquote>
+<ul>
+<li>Why it is needed</li>
+</ul>
+<p>Spatial filters serve a variety of purposes, such as detecting edges along a specific direction, contouring patterns, reducing noise, and detail outlining or smoothing. Filters smooth, sharpen, transform, and remove noise from an image so that you can extract the information you need.</p>
+<ul>
+<li>Principle</li>
+</ul>
+<p>Spatial filtering applies the idea of convolution, which is an algorithm that consists of recalculating the value of a pixel based on its own pixel value and the pixel values of its neighbors weighted by the coefficients of a convolution kernel. Basically, to acheive Spatial Filtering we firstly decide a window, that is the size of the convolution kernel(3 × 3, 5 × 5…can be either square or rectangular). And according to different types of convolutions:gradient, Laplacian, smoothing, and Gaussian, different convolution kernel contents or the weight will be used to calculated the new value of the central kernel pixel.</p>
+<p>From the perspective of mathematical calculation, it is to construct a matrix, multiply the elements of the matrix by the value of the corresponding pixel, and then add up the products as the new value of the central pixel. Like the picture blew illustrates.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/36.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Example of Spatial filtering</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Methods/Examples</li>
+</ul>
+<p>Spatial filters fall into two categories:</p>
+<table class="table">
+<caption>Spatial filtering</caption>
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Highpass filters</td>
+<td>emphasize significant variations of the light intensity usually found at the boundary of objects. Highpass frequency filters help isolate abruptly varying patterns that correspond to sharp edges, details, and noise.</td>
+</tr>
+<tr class="even">
+<td>Lowpass filters</td>
+<td>attenuate variations of the light intensity. Lowpass frequency filters help emphasize gradually varying patterns such as objects and the background. They have the tendency to smooth images by eliminating details and blurring edges.</td>
+</tr>
+</tbody>
+</table>
+<p>Specific tye of Spatial Filter and its application can be found in <a href="https://www.ni.com/docs/en-US/bundle/ni-vision-concepts-help/page/spatial_filtering.html">here</a></p>
+<p>There are also other way to process the image and gain information we needed, like <strong>Texture</strong>, <strong>Data fusion</strong> and <strong>PCA</strong>, here I am trying to use R language to achieved them. In addition, paying special attention on them in the application part.</p>
+</section>
+<section id="practice-with-r" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="practice-with-r"><span class="header-section-number">3.1.3</span> Practice with R</h3>
+<p>Here I will use R to achieve some enhancement methods. Firstly we use <code>pull()</code> to load our raster layers into a stack, then we can easily pick out one of the band.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List your raster files excluding band 8 using the patter argument</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>m1<span class="ot">&lt;-</span><span class="fu">dir_info</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"LC09_L2SP_203023_20220326_20220328_02_T1"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">str_detect</span>(path, <span class="st">"[1B23456790].TIF"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(path) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.character</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load our raster layers into a stack</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">rast</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>referring the equation given above, the NDVI can be calculated quickly,</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m1_NDVI <span class="ot">&lt;-</span> (m1<span class="sc">$</span>LC09_L2SP_203023_20220326_20220328_02_T1_SR_B5 <span class="sc">-</span> m1<span class="sc">$</span>LC09_L2SP_203023_20220326_20220328_02_T1_SR_B4 ) <span class="sc">/</span> (m1<span class="sc">$</span>LC09_L2SP_203023_20220326_20220328_02_T1_SR_B5 <span class="sc">+</span> m1<span class="sc">$</span>LC09_L2SP_203023_20220326_20220328_02_T1_SR_B4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/NDVI2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure of NDVI &gt;0.2 the high value stands for the healty plant</figcaption><p></p>
+</figure>
+</div>
+<p>and the <a href="https://rdrr.io/cran/glcm/man/glcm.html">glcm</a> package can help us to do the Texture Analysis.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glcm</span>(x, <span class="at">n_grey =</span> <span class="dv">32</span>, <span class="at">window =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>), <span class="at">shift =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>), <span class="at">statistics =</span> <span class="fu">c</span>(<span class="st">"mean"</span>, <span class="st">"variance"</span>, <span class="st">"homogeneity"</span>, <span class="st">"contrast"</span>, <span class="st">"dissimilarity"</span>, <span class="st">"entropy"</span>, <span class="st">"second_moment"</span>, <span class="st">"correlation"</span>), <span class="at">min_x=</span><span class="cn">NULL</span>, <span class="at">max_x=</span><span class="cn">NULL</span>, <span class="at">na_opt=</span><span class="st">"any"</span>, <span class="at">na_val=</span><span class="cn">NA</span>, <span class="at">scale_factor=</span><span class="dv">1</span>, <span class="at">asinteger=</span><span class="cn">FALSE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#statistics means a list of GLCM texture measures to calculate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>if we usd the <code>homogeneity</code> measure the results is shown blow</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/homogeneity.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">the homogeneity of the image</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Homogeneity texture measure
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Homogeneity was a measure of the similarity of pixel values in the neighborhood defined by the processing window, ranging from 0.0 (completely dissimilar) to 1.0 (all cells having equivalent values) <a href="https://doi.org/10.3390/rs61212187">(Lane CR et al.&nbsp;2014)</a></p>
+</div>
+</div>
+<p>the video <a href="https://www.youtube.com/watch?v=g6RwF8J80Gg">Introduction to textural classification in QGIS 3.10</a> shows basic concept of Texture Analysis as well as how to do it in QGIS.</p>
+<p>For PCA, <a href="https://rdrr.io/cran/RStoolbox/man/rasterPCA.html">rasterPCA</a> can be helpful to reduce the dimensionality of our data.</p>
+</section>
+</section>
+<section id="application" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
+</section>
+<section id="reflection" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
+</section>
+<section id="reference" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">3.4</span> Reference</h2>
+
+
 </section>
 
 </main> <!-- /main -->
