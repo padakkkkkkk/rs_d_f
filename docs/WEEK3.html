@@ -557,12 +557,63 @@ Homogeneity texture measure
 </section>
 <section id="application" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="application"><span class="header-section-number">3.2</span> Application</h2>
+<p><strong>Texture Analysis in Classification</strong></p>
+<p><em>In remote sensing image, texture means the spatial variation of the pixels in an small area. So, it is different from what the image visually looks like. <a href="https://doi.org/10.1080/0143116042000192367">Coburn, C. A., &amp; Roberts, A. C. (2004)</a> pointed out that of all the spatial information that can be extracted from remotely sensed data, texture may be the most useful for segmenting images. Therefore, Texture Analysis can provide information that the visual interpretation cannot. when we are trying to distinguish the geographic entities or the land cover. Here is a example about how texture analysis can be combined with Random Forest technique to accurately differentiate land covers of urban vegetated areas.</em></p>
+<p><a href="https://www.mdpi.com/2072-4292/7/1/1074">Feng Q et al.&nbsp;(2015)</a> achieved <strong>urban vegetation mapping</strong> by using UAV Remote Sensing data. Its whole processes include 3 parts:data acquisition and preprocessing;image classification; accuracy analysis. The Random Forest and texture analysis were introduced in the second part.</p>
+<p>For the texture analysis, six least correlated texture measures according to <a href="https://doi.org/10.1016/j.jag.2013.01.003">Szantoi Z et al.&nbsp;(2013)</a> were used in the study(mean (MEA), standard deviation (STD), homogeneity (HOM), dissimilarity (DIS), entropy (ENT) and angular second moment (ASM)). Besides, only Green band was used for the texture statistics and they were second-order (co-occurrence) textures.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/37Workflow%20.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">The workflow of the study</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+First-Order (Occurrence) and Second-Order (Co-Occurrence)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>First-order metrics operate on the counts, or occurrences, of the different digital number (DN) values within a kernel. Separate images with different spatial arrangements of the same pixels within a single kernel will yield the same first-order texture value in both kernels.</li>
+<li>Second-order (also called co-occurrence) metrics analyze the relationship between pixel pairs. They use a co-occurrence matrix to calculate texture values. This matrix is a function of both the angular relationship and distance between two neighboring pixels. It shows the number of occurrences of the relationship between a pixel and its specified neighbor.</li>
+</ul>
+<p>find more at <a href="https://www.l3harrisgeospatial.com/docs/backgroundtexturemetrics.html#First-Or">Texture Metrics Background</a></p>
+</div>
+</div>
+<p>Here, we skip the steps the author calculated the textures, just remember that 9 texture window sizes were chosen and <strong>texture features derived at different window sizes were added separately as additional ancillary bands to the RGB images for further classification.</strong></p>
+<p>We will not talk about Random Forest too much here, it is a supervised classification and the UAV orthophotos and ancillary texture features were inputs.</p>
+<p>Here is the figure in the paper which shows 2 original RGB images. According to field survey and the aim of the project, three vegetated land covers were chosen as follows: grass, trees and shrubs</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/39original.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">The original RGB images</figcaption><p></p>
+</figure>
+</div>
+<p>And here is the results of classification. For the picture below, the <em>GRB-only</em> means only used GRB bands as inputs while the <em>RGB+GT31</em> means the texture metrics with the moving windows 31 × 31 (GT31) included. So, this figure <strong>depicts the differences before and after the inclusion of texture features</strong>. We can easily see that both Image-A and Image-B show some “salt and pepper” effects.And the inclusion of texture improves the classification accuracy from a visual point of view. This is because <strong>the inclusion of texture increases the between-class separability and tends to remove small isolated groups of pixels</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/38classification.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">The classification results.(a) Image-A RGB-only; (b) Image-A RGB+GT31; (c) Image-B RGB-only; (d) Image-B RGB+GT31</figcaption><p></p>
+</figure>
+</div>
+<p>In addition, if looking at the details, we can see that some part of the area with tree, grass and bare soil come together, some pixels are <strong>misclassified</strong> in RGB-only classification. This may due to <strong>tree, dead shrubs and bare soil share similar colors</strong>. But these misclassifications can be improved after the inclusion of six texture features at window size 31.</p>
+<p>In conclusion, this study manifests that the including of texture features can increase the classification accuracy when differentiating land covers of urban vegetated areas. It also shows us the impact of texture window size on classification accuracy, which turns out has an inverted U relationship.</p>
+<p><em>However, personally speaking, I think there are still some points that the author hasn’t provided enough information. For example, why the Second-order metrics was chosen here instead of the First-Order one? Will there be any difference of the classification results if we use the latter? In addition, I am not very sure about why the experiment used 6 texture measures. Does the contribution of these texture measures to the classification make a difference?</em></p>
 </section>
 <section id="reflection" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
 </section>
 <section id="reference" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">3.4</span> Reference</h2>
+<p>APA</p>
+<p>Feng, Q., Liu, J., &amp; Gong, J. (2015). UAV remote sensing for urban vegetation mapping using random forest and texture analysis. <em>Remote sensing</em>, 7(1), 1074-1094.</p>
+<p>Coburn, C. A., &amp; Roberts, A. C. (2004). A multiscale texture analysis procedure for improved forest stand classification. <em>International journal of remote sensing</em>, 25(20), 4287-4308.</p>
+<p>Szantoi, Z., Escobedo, F., Abd-Elrahman, A., Smith, S., &amp; Pearlstine, L. (2013). Analyzing fine-scale wetland composition using high resolution imagery and texture features. International <em>Journal of Applied Earth Observation and Geoinformation</em>, 23, 204-212.</p>
+<p>Lane, C. R., Liu, H., Autrey, B. C., Anenkhonov, O. A., Chepinoga, V. V., &amp; Wu, Q. (2014). Improved wetland classification using eight-band high resolution satellite imagery and a hybrid approach. <em>Remote sensing</em>, 6(12), 12187-12216.</p>
 
 
 </section>
