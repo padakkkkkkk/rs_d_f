@@ -1,0 +1,82 @@
+---
+title: "WEEK4"
+editor: visual
+---
+The learning diary of this week is about policies in cities, and how we can use RS technology to achieve the goals/ideas behind the policy.
+
+Here is an example in Pau da Lima, City of Salvador, Brazil
+
+## Policy
+
+In this case study, the [NEW!! World Cities Report 2022](https://unhabitat.org/sites/default/files/2022/06/wcr_2022.pdf) is the intact referring policy. And the **Chapter 10: Building Resilience for Sustainable Urban Futures** (Page.334) is the section particularly been focused on. There are some of the Policy points mentioned in this part:
+
+> * Investing in key urban infrastructure must be a prerequisite for building sustainable and resilient urban futures.
+* Policymakers must match urban risk assessments with appropriate solutions
+* Visioning and implementation of urban resilience plans must prioritize the poorest and most vulnerable communities.
+* Building urban resilience will not succeed without public participation.
+
+So the infrastructure, urban risk, communities in disadvantage are highlighted here. It reminds us the vulnerability of slums and informal settlements due to the poor infrastructure is far from Resilience.
+
+Following the report, in **10.4. Environmental Resilience**, it talks about raising awareness of different local urban risks and identification of feasible disaster prevention and preparedness. In which the discussion of flood is involved: 
+
+>...focused principally on flood risk, with imaginative awareness raising strategies and mitigation strategies including a shift from traditional hard engineering solutions towards naturebased solutions and ecosystem services such as restoring and expanding riverine vegetation and floodplains...
+
+And next, the report emphasizes on building resilience in slums and informal settlements, this is because people and areas there are facing particular vulnerabilities and high risks.
+
+Therefore, referring the policy, this case study tried to pay attention to building **resilience in slums and informal settlements**. Focused principally on **flood risk**. The policy suggests that we could achieve the development of resilience cities with:
+
+>...imaginative awareness-raising strategies and mitigation strategies including a shift from traditional hard engineering solutions towards nature-based solutions and ecosystem services...
+
+That is quite abstract. However, as RS technology is closely related to the nature, and can be used in both hard engineering and software system, I think we can achieve it. 
+
+## Study Area and the Problem Desription
+
+(Slum community) Pau da Lima, City of Salvador, Brazil
+
+![Pau da Lima](image/4slum.jpeg)
+
+In total, 67% of the population of Salvador and 37% of the urban population in Brazil reside in slum communities with equal or greater levels of poverty as that found in Pau da Lima. And a tropical rainforest country, the average monthly precipitation is more than 60 mm, which shows that the area has a large amount of precipitation all year round. However, the area's **drainage system is unstable and has open sewers**, so overflows often occur during periods of heavy rain, and the valley floor is prone to flooding. **Sanitary conditions in the area are generally poor, and residents are often exposed to garbage and sewers**. Besides, **the buildings in slum areas are informal, so their structure is often unstable which will cause danger in storm rain periods**.
+
+## Proposed Measures
+
+### Assessment
+
+|Name|Notes|Aims|Data and Methods|
+|-------|----------------------|---------|----------------|
+| Land-use and Land-cover recognition| The complex distribution of buildings in slum areas and the lack of a clear building plan make it difficult to map the areas. Furthermore, the Pau da Lim slum is in a valley area and is heavily vegetated, which makes it more difficult to classify land use|Identify the distribution of settlements, reservoirs, sewers, etc. in slums| Using multispectral or hyperspectral imagery, combined with image recognition and machine learning algorithm techniques; Using SAR for texture analysis to identify residential buildings|
+|Terrain detection|For houses in low-lying areas and in flood-prone areas, the risk factor is higher in flooding|Assessment of the hazard index at the terrain level|Using LIDAR technology to obtain topographic elevations and generate DEM data|
+|Physical safety of buildings measurement|Many buildings in slum areas are not built to code and have unstable roofs, which can easily fall off during heavy rainfall and cause injuries|Detection of dangerous buildings|Using VHR images to extract physical, geometric features of buildings|
+|Environmental Assessment|Poor hygiene around the house, such as sewage running through or open piles of rubbish, can cause serious health problems when flooding|Analysis of the environmental health of the surroundings of the residence|Monitoring of water quality parameters (e.g. water temperature, cyanobacteria concentration, chlorophyll concentration, etc.) in water bodies using meteorological satellites for effluent identification|
+
+: Targets and Methods for Flood Risk Assessment
+
+### Reconstruction
+
+Referring to the results of the assessment, dangerous houses are rebuilt and houses in flood-prone areas unsuitable for building houses are relocated. In addition, the layout of sewerage pipes can be adapted to the land use situation, etc.
+
+### Monitoring
+
+|Name|Aims|Data and Methods|
+|-------|-------------|-------------------|
+|Precipitation monitoring|Real-time monitoring of the relationship between soil moisture content and rainfall in the area to predict the occurrence of flooding|Using the Advanced SCATterometer (ASCAT) on MetOp for soil moisture observations, combined with the SM2RAIN-ASCAT global-scale rainfall product dataset for flooding predictions|
+|Real-time detection of flooding disasters|Identification of the area currently affected by flooding|Using Landsat5TM data and the Normalised Difference Water Index (NDWI) for the extraction of water bodies. If the weather is bad, SAR can also be used too|
+|Disaster assessment| |Comparing remote sensing images before and after flooding|
+|Land use change analysis|Analysis of the expansion of the study area and adjustment of the drainage system to the changes in land use|Like the data and methods of Land-use and Land-cover recognition|
+
+: Targets and Methods for Monitoring Flood
+
+## Summary
+
+From understanding, to prevention, and to handling
+
+## Reference
+|         Munawar, H. S., Hammad, A. W. A., & Waller, S. T. (2022). Remote Sensing Methods for Flood Prediction: A Review. *Sensors (Basel, Switzerland)*, 22(3), 960. <https://doi.org/10.3390/s22030960>
+|         Kuffer M, Pfeffer K, Sliuzas R. Slums from Space—15 Years of Slum Mapping Using Remote Sensing. *Remote Sensing*. 2016; 8(6):455. <https://doi.org/10.3390/rs8060455>
+|         Reis, R. B., Ribeiro, G. S., Felzemburgh, R. D., Santana, F. S., Mohr, S., Melendez, A. X., ... & Ko, A. I. (2008). Impact of environment and social gradient on Leptospira infection in urban slums. *PLoS Neglected Tropical Diseases*, 2(4), e228. <https://doi.org/10.1371/journal.pntd.0000228>
+|         Klemas, V. (2015). Remote sensing of floods and flood-prone areas: An overview. *Journal of Coastal Research*, 31(4), 1005-1013.<https://doi.org/10.2112/JCOASTRES-D-14-00160.1>
+
+
+
+
+
+
