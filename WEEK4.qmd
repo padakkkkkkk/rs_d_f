@@ -2,9 +2,7 @@
 title: "WEEK4"
 editor: visual
 ---
-The learning diary of this week is about policies in cities, and how we can use RS technology to achieve the goals/ideas behind the policy.
-
-Here is an example in Pau da Lima, City of Salvador, Brazil
+The learning diary of this week is about policies in cities, and how we can use RS technology to achieve the goals/ideas behind the policy. And here is an example in Pau da Lima, City of Salvador, Brazil.
 
 ## Policy
 
@@ -15,7 +13,7 @@ In this case study, the [NEW!! World Cities Report 2022](https://unhabitat.org/s
 * Visioning and implementation of urban resilience plans must prioritize the poorest and most vulnerable communities.
 * Building urban resilience will not succeed without public participation.
 
-So the infrastructure, urban risk, communities in disadvantage are highlighted here. It reminds us the vulnerability of slums and informal settlements due to the poor infrastructure is far from Resilience.
+So the infrastructure, urban risk, communities in disadvantage are highlighted here. It reminds us the vulnerability of slums and informal settlements due to the poor infrastructure is far from resilience.
 
 Following the report, in **10.4. Environmental Resilience**, it talks about raising awareness of different local urban risks and identification of feasible disaster prevention and preparedness. In which the discussion of flood is involved: 
 
@@ -23,7 +21,7 @@ Following the report, in **10.4. Environmental Resilience**, it talks about rais
 
 And next, the report emphasizes on building resilience in slums and informal settlements, this is because people and areas there are facing particular vulnerabilities and high risks.
 
-Therefore, referring the policy, this case study tried to pay attention to building **resilience in slums and informal settlements**. Focused principally on **flood risk**. The policy suggests that we could achieve the development of resilience cities with:
+Therefore, referring the policy, this case study tried to pay attention to building **resilience in slums and informal settlements**. Focused principally on **flood risk**. The policy suggests that we could achieve the development of resilient cities with:
 
 >...imaginative awareness-raising strategies and mitigation strategies including a shift from traditional hard engineering solutions towards nature-based solutions and ecosystem services...
 
@@ -65,9 +63,20 @@ Referring to the results of the assessment, dangerous houses are rebuilt and hou
 
 : Targets and Methods for Monitoring Flood
 
-## Summary
+## Summary and Reflection
 
-From understanding, to prevention, and to handling
+* From understanding, preventing, and to handling the flood disaster in slum areas, this case study shows the possibility that RS technology can be helpful when constructing a resilient city. 
+
+* For the whole process, this study is about measuring the risk level of each area. Before the flood, planning to reconstruct the infrastructure like the drainage system, remove settlements in dangerous areas, etc, so we can defend against the flood better and minimize the damage it causes. And when the flood is coming, we hope there is a system that can predict its accuracy, giving people adequate reaction time. This would be with the help of a monitoring system. In addition, during and after the flood, the system can provide information on the impact of disasters in different regions. This is especially helpful for rescue and re-planning in the future.
+
+* The advantage of RS is its real-time response to environmental changes. This is crucial when dealing with issue associated with nature. Besides, as a technology based on data, it can well applied in different system, playing a role of information provider.
+
+* However, there are also certain challenges in applying RS in this case. The most nonnegligible and realistic point is the investment of money and professionals. Although urban issues and slum issues both involve geographic space and the social activities of people, the former are often considered worthy of costly long-term research. For the latter, a large number of existing slum rescue projects are based on "demolition" and "reconstruction", so whether it is reasonable to invest a lot of manpower and money to build a RS system for an object that only exists for a limited time needs to be considered by the local government. 
+
+* Of course, one solution is to build a flexible system that can be used in more than one place, no matter in downtown area or in slum. And this will face another major challenge, that is, the huge differences of areas.This includes, but is not limited to climate, topography, architectural structure and the stage of development of the city. Therefore, we need a large number of RS-based practices, so that we can provide references this kind of projects in the future.
+
+* And last, for the policy. I think most of the policies show a real ideal and satisfactory planning for the future city while some of them are very vague. if we can catch the essence of the policy, we may come up with measures that can achieve the goal. For example, the resiliency of the city seems very abstract. But if we are talking about cities responding to natural disasters quickly and effectively, then it will be clear what we suppose to do.
+
 
 ## Reference
 |         Munawar, H. S., Hammad, A. W. A., & Waller, S. T. (2022). Remote Sensing Methods for Flood Prediction: A Review. *Sensors (Basel, Switzerland)*, 22(3), 960. <https://doi.org/10.3390/s22030960>
