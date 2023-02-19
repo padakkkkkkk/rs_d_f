@@ -2,7 +2,12 @@
 title: "WEEK4"
 editor: visual
 ---
-The learning diary of this week is about policies in cities, and how we can use RS technology to achieve the goals/ideas behind the policy. And here is an example in Pau da Lima, City of Salvador, Brazil.
+The learning diary of this week is about:
+
+* SAR (the content of lecture)
+* Policies in cities, and how we can use RS technology to achieve the goals/ideas behind the policy. And here we give an example in Pau da Lima, City of Salvador, Brazil.
+
+## SAR
 
 ## Policy
 

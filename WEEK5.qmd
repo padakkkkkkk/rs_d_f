@@ -1,0 +1,82 @@
+---
+title: "WEEK5"
+editor: visual
+---
+
+## What is GEE?
+
+[Google Earth Engine](https://earthengine.google.com/)是Google提供的对大量全球尺度地球科学资料（尤其是卫星数据）进行在线可视化计算和分析处理的云平台。该平台能够存取卫星图像和其他地球观测数据数据库中的资料并足够的运算能力对这些数据进行处理。
+
+通俗的来讲，就是Google earth engine 可以在线对遥感数据（或其他地球资料）进行处理分析，而不用将数据下载到自己电脑上进行处理。我们只需要把最后的结果下载到自己电脑上就可以了。
+
+这是Google Earth Engine的工作空间，下图现实了不同区域的功能。
+
+
+## How to use it?
+
+Here is the [tutorial book](https://developers.google.com/earth-engine/tutorials/community/beginners-cookbook)
+
+First of all, the two most fundamental geographic data structures in the Earth Engine, [Image](https://developers.google.com/earth-engine/guides/image_overview) and [Feature](https://developers.google.com/earth-engine/guides/features), correspond to **raster** and **vector** data types respectively. An image consists of a dictionary of bands and attributes. Features consist of a Geometry and an attribute dictionary. A collection of images (e.g. a time series of images) is represented by [ImageCollection](https://developers.google.com/earth-engine/guides/ic_creating). A collection of features is represented by [FeatureCollection](https://developers.google.com/earth-engine/guides/feature_collections).
+
+And I think the most of time we use GEE is to deal with RS image, so we will focus on the Image here.
+
+* Load data
+
+在search for data区域点击browse data catalogue，会弹出一个页面里面包括了可调用的所有遥感影像数据。这些Earth Engine's public data按照Climate and Weather，Imagery，Geophysical等类别分类。可以更具需求选择不同的遥感影像产品。该网页还提供了导入数据的示例代码。
+
+对于Landsat数据，在选择了指定的 Landsat satellites后，（这里以 Landsat 8 Level 2, Collection 2, Tier 2为例子）Explore in Earth Engine给出的示例代码为：
+
+``` javascript
+var dataset = ee.ImageCollection('LANDSAT/LC08/C02/T2_L2')
+    .filterDate('2021-05-01', '2021-06-01');
+
+// Applies scaling factors.
+function applyScaleFactors(image) {
+  var opticalBands = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+  var thermalBands = image.select('ST_B.*').multiply(0.00341802).add(149.0);
+  return image.addBands(opticalBands, null, true)
+              .addBands(thermalBands, null, true);
+}
+
+dataset = dataset.map(applyScaleFactors);
+
+var visualization = {
+  bands: ['SR_B4', 'SR_B3', 'SR_B2'],
+  min: 0.0,
+  max: 0.3,
+};
+
+Map.setCenter(-83, 24, 8);
+
+Map.addLayer(dataset, visualization, 'True Color (432)');
+
+```
+其中ImageCollection表示导入的是一组影像数据，时间序列为2021-05-01到2021-06-01。
+applyScaleFactors是一个
+
+::: callout-note
+# scale factor
+
+A scale factor must be applied to both Collection 1 and Collection 2 Landsat Level-2 surface reflectance and surface temperature products before using the data. GEE提供的是Landsat Collection 2，its surface reflectance has a scale factor of 0.0000275 and an additional offset of -0.2 per pixel
+
+:::
+
+we need to add the data to our map so we can see them, so we call Map.addLayer.
+
+运行代码我们得到如下图所示的结果：
+
+图像展示了我们选择导入的图像集。
+
+我们也可以对数据进行更细的过滤，比如选择单张图像。we can use this [website](https://landsat.usgs.gov/landsat_acq#convertPathRow) to find out the Path and Row of Landsat image for a area.然后利用LANDSAT/LC08/C02/T1_L2/LC08_146040_20211127 这样的路径搜索实现单张遥感影像的导入。这里是第 146 40
+
+cloud的占比
+。。。
+
+Linear regression in GEE?
+
+## Application
+
+## Reflections
+
+
+
