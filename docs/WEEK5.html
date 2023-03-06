@@ -228,9 +228,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="what-is-gee" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="what-is-gee"><span class="header-section-number">5.1</span> What is GEE?</h2>
-<p><a href="https://earthengine.google.com/">Google Earth Engine</a>是Google提供的对大量全球尺度地球科学资料（尤其是卫星数据）进行在线可视化计算和分析处理的云平台。该平台能够存取卫星图像和其他地球观测数据数据库中的资料并足够的运算能力对这些数据进行处理。</p>
-<p>通俗的来讲，就是Google earth engine 可以在线对遥感数据（或其他地球资料）进行处理分析，而不用将数据下载到自己电脑上进行处理。我们只需要把最后的结果下载到自己电脑上就可以了。</p>
-<p>这是Google Earth Engine的工作空间，下图现实了不同区域的功能。</p>
+<p><a href="https://earthengine.google.com/">Google Earth Engine</a> GEE is a cloud platform provided by Google for online visual computing and analysis processing of a large number of global-scale earth science data (especially satellite data). The platform has access to satellite imagery and other Earth observation data databases and sufficient computing power to process these data.</p>
+<p>In layman’s terms, Google earth engine can process and analyze remote sensing data (or other earth data) online without downloading the data to your computer for processing. We just need to download the final result to our computer.</p>
+<p>The image below shows the Google Earth Engine workspace</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/51.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Google Earth Engine workspace</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="how-to-use-it" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="how-to-use-it"><span class="header-section-number">5.2</span> How to use it?</h2>
@@ -240,8 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Load data</li>
 </ul>
-<p>在search for data区域点击browse data catalogue，会弹出一个页面里面包括了可调用的所有遥感影像数据。这些Earth Engine’s public data按照Climate and Weather，Imagery，Geophysical等类别分类。可以更具需求选择不同的遥感影像产品。该网页还提供了导入数据的示例代码。</p>
-<p>对于Landsat数据，在选择了指定的 Landsat satellites后，（这里以 Landsat 8 Level 2, Collection 2, Tier 2为例子）Explore in Earth Engine给出的示例代码为：</p>
+<p>By cliking the search for data area, and then the browse data catalogue. A page will pop up, including all remote sensing image data that can be called. These Earth Engine’s public data are classified according to Climate and Weather, Imagery, Geophysical and other categories. You can choose different remote sensing image products according to your needs. This page also provides sample code for importing data.</p>
+<p>For Landsat data, after selecting the specified Landsat satellites, (here take Landsat 8 Level 2, Collection 2, Tier 2 as an example) the sample code given by Explore in Earth Engine is:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> dataset <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'LANDSAT/LC08/C02/T2_L2'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2021-05-01'</span><span class="op">,</span> <span class="st">'2021-06-01'</span>)<span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -264,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">setCenter</span>(<span class="op">-</span><span class="dv">83</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">8</span>)<span class="op">;</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(dataset<span class="op">,</span> visualization<span class="op">,</span> <span class="st">'True Color (432)'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>其中ImageCollection表示导入的是一组影像数据，时间序列为2021-05-01到2021-06-01。 applyScaleFactors是一个</p>
+<p>Among them, <code>ImageCollection</code> indicates that a set of image data is imported, and the time series is from 2021-05-01 to 2021-06-01. <code>applyScaleFactors</code> is a function used to choose a reasonable processing scale.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -275,21 +281,176 @@ scale factor
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A scale factor must be applied to both Collection 1 and Collection 2 Landsat Level-2 surface reflectance and surface temperature products before using the data. GEE提供的是Landsat Collection 2，its surface reflectance has a scale factor of 0.0000275 and an additional offset of -0.2 per pixel</p>
+<p>A scale factor must be applied to both Collection 1 and Collection 2 Landsat Level-2 surface reflectance and surface temperature products before using the data. GEE provides Landsat Collection 2，its surface reflectance has a scale factor of 0.0000275 and an additional offset of -0.2 per pixel</p>
 </div>
 </div>
-<p>we need to add the data to our map so we can see them, so we call Map.addLayer.</p>
-<p>运行代码我们得到如下图所示的结果：</p>
-<p>图像展示了我们选择导入的图像集。</p>
-<p>我们也可以对数据进行更细的过滤，比如选择单张图像。we can use this <a href="https://landsat.usgs.gov/landsat_acq#convertPathRow">website</a> to find out the Path and Row of Landsat image for a area.然后利用LANDSAT/LC08/C02/T1_L2/LC08_146040_20211127 这样的路径搜索实现单张遥感影像的导入。这里是第 146 40</p>
-<p>cloud的占比 。。。</p>
-<p>Linear regression in GEE?</p>
+<p>And we need to add the data to our map so we can see them, so we call Map.addLayer.</p>
+<p>Running the code we get the result shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5%20result.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">result</figcaption><p></p>
+</figure>
+</div>
+<p>We can also filter the data more finely, such as selecting a single image. We can use this <a href="https://landsat.usgs.gov/landsat_acq#convertPathRow">website</a> to find out the Path and Row of Landsat image for a area.Using path like LANDSAT/LC08/C02/T1_L2/LC08_146040_20211127 to search the single image and load it. Here it means the path 146 and 40th row. And we can find out the specific location of this image in the map.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5path.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Convert Path/Row - Lat/Long</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Processing the image</li>
+</ul>
+<p>We can do a lot of work on GEE, for example the band math. Here is an example for calculating Normalized Difference Vegetation Index (NDVI) value.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">// This function gets NDVI from Landsat 5 imagery.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> getNDVI <span class="op">=</span> <span class="kw">function</span>(image) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> image<span class="op">.</span><span class="fu">normalizedDifference</span>([<span class="st">'B4'</span><span class="op">,</span> <span class="st">'B3'</span>])<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Load two Landsat 5 images, 20 years apart.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> image1 <span class="op">=</span> ee<span class="op">.</span><span class="fu">Image</span>(<span class="st">'LANDSAT/LT05/C02/T1_TOA/LT05_044034_19900604'</span>)<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> image2 <span class="op">=</span> ee<span class="op">.</span><span class="fu">Image</span>(<span class="st">'LANDSAT/LT05/C02/T1_TOA/LT05_044034_20100611'</span>)<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Use false color combination to visualize the map</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> vizParams <span class="op">=</span> {<span class="dt">bands</span><span class="op">:</span> [<span class="st">'B4'</span><span class="op">,</span> <span class="st">'B3'</span><span class="op">,</span> <span class="st">'B1'</span>]<span class="op">,</span> <span class="dt">min</span><span class="op">:</span> <span class="fl">0.02</span><span class="op">,</span> <span class="dt">max</span><span class="op">:</span> <span class="fl">0.4</span><span class="op">,</span> <span class="dt">gamma</span><span class="op">:</span> <span class="fl">1.3</span>}<span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(image1<span class="op">,</span>vizParams<span class="op">,</span> <span class="st">'image1 Landsat 5 false color'</span>)<span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(image2<span class="op">,</span>vizParams<span class="op">,</span> <span class="st">'image2 Landsat 5 false color'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5ndvi1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">NDVI image in 1990</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5ndvi2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">NDVI image in 2010</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The NDVI value and the difference between NDVI images 20 years can be computed</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute NDVI from the scenes.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> ndvi1 <span class="op">=</span> <span class="fu">getNDVI</span>(image1)<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> ndvi2 <span class="op">=</span> <span class="fu">getNDVI</span>(image2)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute the difference</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> ndviDifference <span class="op">=</span> ndvi2<span class="op">.</span><span class="fu">subtract</span>(ndvi1)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="application" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="application"><span class="header-section-number">5.3</span> Application</h2>
+<ul>
+<li>Interpreting the image</li>
+</ul>
+<p>Classification can be done through GEE too, here is an example of Supervised Classification based on the tutorial <a href="https://google-earth-engine.com/Interpreting-Images/Interpreting-an-Image-Classification/">Interpreting an Image Classification</a></p>
+<p>First we load the image of the city Milan to get a scene</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Create an Earth Engine Point object over Milan.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> pt<span class="op">=</span>ee<span class="op">.</span><span class="at">Geometry</span><span class="op">.</span><span class="fu">Point</span>([<span class="fl">9.453</span><span class="op">,</span> <span class="fl">45.424</span>])<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Filter the Landsat 8 collection and select the least cloudy image.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> landsat<span class="op">=</span>ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'LANDSAT/LC08/C02/T1_L2'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   <span class="op">.</span><span class="fu">filterBounds</span>(pt)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2019-01-01'</span><span class="op">,</span> <span class="st">'2020-01-01'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>   <span class="op">.</span><span class="fu">sort</span>(<span class="st">'CLOUD_COVER'</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   <span class="op">.</span><span class="fu">first</span>()<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Center the map on that image.</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">centerObject</span>(landsat<span class="op">,</span> <span class="dv">8</span>)<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Add Landsat image to the map.</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> visParams<span class="op">=</span>{</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>   <span class="dt">bands</span><span class="op">:</span> [<span class="st">'SR_B4'</span><span class="op">,</span> <span class="st">'SR_B3'</span><span class="op">,</span> <span class="st">'SR_B2'</span>]<span class="op">,</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>   <span class="dt">min</span><span class="op">:</span> <span class="dv">7000</span><span class="op">,</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>   <span class="dt">max</span><span class="op">:</span> <span class="dv">12000</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(landsat<span class="op">,</span> visParams<span class="op">,</span> <span class="st">'Landsat 8 image'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then using the Geometry Import function (point drawing), we click the pixel of image to import named forest, developed, water, and herbaceous type of points as <code>FeatureCollection</code>. Each class of points constitute a layer so we will have 4 different layers: forest, water, developed and herbaceous. These points will be our training data.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5creatclass.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Create Feature Collection</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5classes.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">4 Different Layers/Classes</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Using the code below, we firstly combine all the training feature collections into one. And then,we select the bands whose information will be used in classification.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Combine training feature collections.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> trainingFeatures<span class="op">=</span>ee<span class="op">.</span><span class="fu">FeatureCollection</span>([</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   forest<span class="op">,</span> developed<span class="op">,</span> water<span class="op">,</span> herbaceous</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>])<span class="op">.</span><span class="fu">flatten</span>()<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Define prediction bands.</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> predictionBands<span class="op">=</span>[</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>   <span class="st">'SR_B1'</span><span class="op">,</span> <span class="st">'SR_B2'</span><span class="op">,</span> <span class="st">'SR_B3'</span><span class="op">,</span> <span class="st">'SR_B4'</span><span class="op">,</span> <span class="st">'SR_B5'</span><span class="op">,</span> <span class="st">'SR_B6'</span><span class="op">,</span> <span class="st">'SR_B7'</span><span class="op">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>   <span class="st">'ST_B10'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">// Sample training points.</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> classifierTraining<span class="op">=</span>landsat<span class="op">.</span><span class="fu">select</span>(predictionBands)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>   <span class="op">.</span><span class="fu">sampleRegions</span>({</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>       <span class="dt">collection</span><span class="op">:</span> trainingFeatures<span class="op">,</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>       <span class="dt">properties</span><span class="op">:</span> [<span class="st">'class'</span>]<span class="op">,</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>       <span class="dt">scale</span><span class="op">:</span> <span class="dv">30</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>   })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now the training data is ready, we need to choose a classifier. Here we use the CART classifier. The principle of this classifier will be talked in my later diary. The code in GEE is quite simply. We call the <code>ee.Classifier.smileCart()</code> function, and state the aim of classification is related to the <code>class</code> of each pixel.</p>
+<pre class="javastript"><code>// Train a CART Classifier.
+var classifier=ee.Classifier.smileCart().train({
+   features: classifierTraining,
+   classProperty: 'class',
+   inputProperties: predictionBands
+});
+</code></pre>
+<p>After building the classifier, we can classify our image and visualize the results in a new map.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Classify the Landsat image.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> classified<span class="op">=</span>landsat<span class="op">.</span><span class="fu">select</span>(predictionBands)<span class="op">.</span><span class="fu">classify</span>(classifier)<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Define classification image visualization parameters.</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> classificationVis<span class="op">=</span>{</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>   <span class="dt">min</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>   <span class="dt">max</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>   <span class="dt">palette</span><span class="op">:</span> [<span class="st">'589400'</span><span class="op">,</span> <span class="st">'ff0000'</span><span class="op">,</span> <span class="st">'1a11ff'</span><span class="op">,</span> <span class="st">'d0741e'</span>]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Add the classified image to the map.</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(classified<span class="op">,</span> classificationVis<span class="op">,</span> <span class="st">'CART classified'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The figure below shows the classification results. However, the classification results are not ideal. Compared to the original image, we can see that the a lot of pixel around the forest are misclassified to water. and the class of developed which stands for the built area in cities are not well identified. In the contract, the classified herbaceous area is much lager than it actually is.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/5classificationresult.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Classification Results</figcaption><p></p>
+</figure>
+</div>
+<p>I am not sure about the reason… but if my code is correct, then maybe due to the sample points I collected is not enough, or the results of my visual interpretation are not very accurate…</p>
 </section>
 <section id="reflections" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="reflections"><span class="header-section-number">5.4</span> Reflections</h2>
+<ul>
+<li><p>This week we learned how to process remote sensing images in Google Earth Engine. This is a very advanced technology that can save us a lot of time for downloading data. But since this week’s class was affected by the strike, I didn’t have a good grasp of the use of GEE. But I still made some attempts.</p></li>
+<li><p>First of all, I think GEE can help us clearly list remote sensing products, which is very helpful. For me, I often struggle with which remote sensing product to use. The data catalog of GEE classifies the main application of the product, which is very helpful. In addition, I also think that the working area of GEE can automatically display web maps, which greatly facilitates our understanding of remote sensing images.</p></li>
+<li><p>Secondly, about the code of GEE. Generally speaking, I think the codes of many functions are well packed and very convenient to use. But we still need to have a good understanding of the fundamental geographic data structures of GEE. And GEE’s workspace also allows us to process data interactively, such as drawing elements with the mouse and storing them in layers. This is used in our image classification operation. At present, I can only implement this part by referring to the tutorial document.</p></li>
+<li><p>Finally, in this week’s practice, the supervised classification I tried showed a very bad results. I preliminary analyzed that it has something to do with my sample point selection. Besides, due to the limited understanding of classifiers at present, I hope that I will be more clear about it after week 6 and week 7’s study.</p></li>
+</ul>
 
 
 </section>
