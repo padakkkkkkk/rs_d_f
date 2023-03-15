@@ -1,0 +1,75 @@
+---
+title: "WEEK7"
+editor: visual
+---
+
+## Key Points
+
+### Object based image analysis (OBIA)
+
+![OBIA](image/7OBIA.png)
+
+The classification methods we summarized last week are pixel-based methods. The enormous information of the spectrum can help us tell pixels in different categories. However, there are also some disadvantages of that kinds of methods. One of the most significant is the production of pepper images. In other words, when doing the classification, the pixels are independent to each other, so sometimes the distribution of categories can be fragmented which is not good for spatial analysis. 
+
+To deal with this, we need a method that well involved in the structure of the image, consider the similarity (homogeneity) or difference (heterogeneity) of the cells.
+
+Object based image analysis (OBIA) is a way to classification the image. It includes 2 part: segmentation and classification. The first part aims at breaking the image up into objects representing land-based features. And the following one is about classifying those objects using their shape, size, spatial and spectral properties.
+
+So, segmenting the image into objects is the first step.Here we introduce **SLIC (Simple Linear Iterative Clustering)** Algorithm for Superpixel generation.
+
+::: callout-note
+
+# What is a Superpixel?
+
+A superpixel can be defined as a group of pixels that share common characteristics (like pixel intensity ). Superpixels can provide more information than pixels as pixels belongs to a given superpixel share similar visual properties. 
+
+:::
+
+SLIC generates superpixels by clustering pixels based on their color similarity and proximity in the image plane. This procedure of the algorithm can be summarized as shown in the picture below:
+
+![SLTC algorithm](image/7algorithm.webp)
+
+### Accuracy assessment
+
+It is important to estimate the accuracy of the classification results. No matter what kind of method we use, we have a same way to do the accuracy assessment.
+
+The **binary confusion matrix** is widely use in all kinds of binary classification problem. It use a 2 x 2 matrix to document the number of cases in different relationship of prediction and actual results. So, this matrix can help us analysis the prediction quality from various perspective.
+
+![Confusion Matrix [(Source)](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-3/61/2018/isprs-archives-XLII-3-61-2018.pdf)](image/7confusionmatrix.png){width="80%"}
+
+The picture shows what a confusion matrix looks like. T stands for Ture maens that the predicted result is as same as the actual condition, F for False and vice versa. 
+
+Therefore, 
+
+* A true positive (TP) is an outcome where the model correctly predicts the positive class
+* A true negative (TN) is an outcome where the model correctly predicts the negative class
+* A false positive (FP) is an outcome where the model incorrectly predicts the positive class.
+* A false positive (FN) is an outcome where the model incorrectly predicts the positive class.
+
+Moreover, by counting the sum of the rows and columns of the matrix, the different types of  accuracy can be known. For example, the PA Producer accuracy, UA User’s accuracy and OA the (overall) accuracy.
+
+In the remote sensing image classification scenario, most of time we have more than 2 categories, so the matrix maybe 3 x 3 or 4 x 4. But no matter what scale the matrix is, the accuracy assessment are in similar way.
+
+The **kappa coefficient** is an indicator used for consistency testing and can also be used to measure the effectiveness of a classification. The kappa coefficient is calculated based on the confusion matrix and takes values between -1 and 1, usually greater than 0. The equation and detailed information about kappa coefficient can be find [here](https://en.wikipedia.org/wiki/Cohen%27s_kappa).
+
+### Remote sensing approach and Some problems
+
+Through all the content in week 6 and 7, we can  get a conclusion of the basic process of remote sensing clasification, that is:
+
+* class definition
+* pre-processing
+* training
+* pixel assignment
+* accuracy assessment
+
+However, there maybe some problems, such as "Spatial autocorrelation between training and test sets" And the best approach is, the (spatial) cross validation. 
+
+Cross-validation is a resampling method that uses different portions of the data to test and train a model on different iterations. Therefore, if we are talking about spatial cross validation, it means we use different part of spatial data for training and testing dataset.
+
+## Application
+
+
+## Reflection
+
+
+## Reference

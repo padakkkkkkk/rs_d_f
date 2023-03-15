@@ -180,5 +180,33 @@
     "title": "6  WEEK6",
     "section": "6.4 Reference",
     "text": "6.4 Reference\n        Svoboda J, Štych P, Laštovička J, Paluba D, Kobliuk N. Random Forest Classification of Land Use, Land-Use Change and Forestry (LULUCF) Using Sentinel-2 Data—A Case Study of Czechia. Remote Sensing. 2022; 14(5):1189. https://doi.org/10.3390/rs14051189\n        Farhadi H, Najafzadeh M. Flood Risk Mapping by Remote Sensing Data and Random Forest Technique. Water. 2021; 13(21):3115. https://doi.org/10.3390/w13213115"
+  },
+  {
+    "objectID": "WEEK7.html#application",
+    "href": "WEEK7.html#application",
+    "title": "7  WEEK7",
+    "section": "7.2 Application",
+    "text": "7.2 Application"
+  },
+  {
+    "objectID": "WEEK7.html#reflection",
+    "href": "WEEK7.html#reflection",
+    "title": "7  WEEK7",
+    "section": "7.3 Reflection",
+    "text": "7.3 Reflection"
+  },
+  {
+    "objectID": "WEEK7.html#reference",
+    "href": "WEEK7.html#reference",
+    "title": "7  WEEK7",
+    "section": "7.4 Reference",
+    "text": "7.4 Reference"
+  },
+  {
+    "objectID": "WEEK7.html",
+    "href": "WEEK7.html",
+    "title": "7  WEEK7",
+    "section": "",
+    "text": "OBIA\n\n\nThe classification methods we summarized last week are pixel-based methods. The enormous information of the spectrum can help us tell pixels in different categories. However, there are also some disadvantages of that kinds of methods. One of the most significant is the production of pepper images. In other words, when doing the classification, the pixels are independent to each other, so sometimes the distribution of categories can be fragmented which is not good for spatial analysis.\nTo deal with this, we need a method that well involved in the structure of the image, consider the similarity (homogeneity) or difference (heterogeneity) of the cells.\nObject based image analysis (OBIA) is a way to classification the image. It includes 2 part: segmentation and classification. The first part aims at breaking the image up into objects representing land-based features. And the following one is about classifying those objects using their shape, size, spatial and spectral properties.\nSo, segmenting the image into objects is the first step.Here we introduce SLIC (Simple Linear Iterative Clustering) Algorithm for Superpixel generation.\n\n\n\n\n\n\nWhat is a Superpixel?\n\n\n\nA superpixel can be defined as a group of pixels that share common characteristics (like pixel intensity ). Superpixels can provide more information than pixels as pixels belongs to a given superpixel share similar visual properties.\n\n\nSLIC generates superpixels by clustering pixels based on their color similarity and proximity in the image plane. This procedure of the algorithm can be summarized as shown in the picture below:\n\n\n\nSLTC algorithm\n\n\n\n\n\nIt is important to estimate the accuracy of the classification results. No matter what kind of method we use, we have a same way to do the accuracy assessment.\nThe binary confusion matrix is widely use in all kinds of binary classification problem. It use a 2 x 2 matrix to document the number of cases in different relationship of prediction and actual results. So, this matrix can help us analysis the prediction quality from various perspective.\n\n\n\nConfusion Matrix (Source)\n\n\nThe picture shows what a confusion matrix looks like. T stands for Ture maens that the predicted result is as same as the actual condition, F for False and vice versa.\nTherefore,\n\nA true positive (TP) is an outcome where the model correctly predicts the positive class\nA true negative (TN) is an outcome where the model correctly predicts the negative class\nA false positive (FP) is an outcome where the model incorrectly predicts the positive class.\nA false positive (FN) is an outcome where the model incorrectly predicts the positive class.\n\nMoreover, by counting the sum of the rows and columns of the matrix, the different types of accuracy can be known. For example, the PA Producer accuracy, UA User’s accuracy and OA the (overall) accuracy.\nIn the remote sensing image classification scenario, most of time we have more than 2 categories, so the matrix maybe 3 x 3 or 4 x 4. But no matter what scale the matrix is, the accuracy assessment are in similar way.\nThe kappa coefficient is an indicator used for consistency testing and can also be used to measure the effectiveness of a classification. The kappa coefficient is calculated based on the confusion matrix and takes values between -1 and 1, usually greater than 0. The equation and detailed information about kappa coefficient can be find here.\n\n\n\nThrough all the content in week 6 and 7, we can get a conclusion of the basic process of remote sensing clasification, that is:\n\nclass definition\npre-processing\ntraining\npixel assignment\naccuracy assessment\n\nHowever, there maybe some problems, such as “Spatial autocorrelation between training and test sets” And the best approach is, the (spatial) cross validation.\nCross-validation is a resampling method that uses different portions of the data to test and train a model on different iterations. Therefore, if we are talking about spatial cross validation, it means we use different part of spatial data for training and testing dataset."
   }
 ]
