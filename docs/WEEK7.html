@@ -226,10 +226,10 @@ What is a Superpixel?
 <p>The picture shows what a confusion matrix looks like. T stands for Ture maens that the predicted result is as same as the actual condition, F for False and vice versa.</p>
 <p>Therefore,</p>
 <ul>
-<li>A true positive (TP) is an outcome where the model correctly predicts the positive class</li>
-<li>A true negative (TN) is an outcome where the model correctly predicts the negative class</li>
+<li>A true positive (TP) is an outcome where the model correctly predicts the positive class.</li>
+<li>A true negative (TN) is an outcome where the model correctly predicts the negative class.</li>
 <li>A false positive (FP) is an outcome where the model incorrectly predicts the positive class.</li>
-<li>A false positive (FN) is an outcome where the model incorrectly predicts the positive class.</li>
+<li>A false positive (FN) is an outcome where the model incorrectly predicts the negative class.</li>
 </ul>
 <p>Moreover, by counting the sum of the rows and columns of the matrix, the different types of accuracy can be known. For example, the PA Producer accuracy, UA User’s accuracy and OA the (overall) accuracy.</p>
 <p>In the remote sensing image classification scenario, most of time we have more than 2 categories, so the matrix maybe 3 x 3 or 4 x 4. But no matter what scale the matrix is, the accuracy assessment are in similar way.</p>
@@ -251,12 +251,44 @@ What is a Superpixel?
 </section>
 <section id="application" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="application"><span class="header-section-number">7.2</span> Application</h2>
+<ul>
+<li><strong>Image classification</strong></li>
+</ul>
+<p>Basically, the Object based image analysis is seen as a way to improve the classification accuracy, especially in those area the composition of land is complex. For example, Krause et al <a href="https://doi.org/10.1016/j.rsase.2022.100910">(2021)</a> improved the mapping of coastal slt marsh habitat change using object-based image analysis of high-resolution aerial imagery. The study results shows that the suitability of high-resolution imagery for the detection of open water features. And it also demonstrates the advantage of OBIA.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/7workflow.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Schema of geospatial imagery processing and classification workflow</figcaption><p></p>
+</figure>
+</div>
+<p>Here is a workflow of Krause and others’ workflow. After the classification, a change map was carried out to illustrate the trend of salt marsh in the study area. From my point of view, the OBIA integrated the pixel with this feature, so the classified object is bigger than pixel. That could help us observe the different between before and now.</p>
+<p>Ghorbanzadeh et al <a href="https://link.springer.com/article/10.1007/s10346-021-01843-x">(2022)</a> also applied OBIA to the landslide detection. Intuitive annotation of landslides from satellite imagery is based on distinct features rather than individual pixels. Hence, the study examed the feasibility of the integration framework of a DL model with rule-based object-based image analysis (OBIA) to detect landslides.</p>
+<ul>
+<li><strong>Confusion Matrix</strong></li>
+</ul>
+<p>In Ghorbanzadeh’s research, the landslide detection results were validated by measuring the number of pixels allocated as true positive (TP), false positive (FP), and false negative (FN). The picture blow shows the assessment results.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/7accuracy.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Accuracy Assessment</figcaption><p></p>
+</figure>
+</div>
+<p>We know that true positive (TP) means an outcome where the model correctly predicts the positive class. So we can compare the light green area to know which algorithm can recognize the most of landslide area. And the same way for FP and FN.</p>
 </section>
 <section id="reflection" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
+<ul>
+<li><p>This week we learn another type of classification method in RS, the Object-based image analysis (OBIA). It differs from the pixel-based image analysis as the OBIA pay attention to a group of pixels with the same feature. It is similar to the way people interpret the image visually. Besides, by aggregating the pixel into objects, information beyond the colour can be obtained when classification. Further, OBIA can also avoid the pepper image in the end, which is definitely good for the next analysis.</p></li>
+<li><p>However, using OBIA means that you need segment the image before carrying out classification algorithm. Therefore, the quality of segmentation well affect the final classification accuracy. Liu et al <a href="https://doi.org/10.1080/01431161003743173">(2010)</a> stated that there are two main disadvanteges of OBIA, that is, (1) segmentation accuracies decrease with increasing segmentation scales and the negative impacts of under-segmentation errors become significantly large at large scales and (2) there are both advantages and limitations in using object-based classification, and their trade-off determines the overall effect of object-based classification, which is dependent on the segmentation scales.</p></li>
+<li><p>So, in my opinion, OBIA may improve the classification results in most of cases, but the previous segmentation also increase the risk of mis-classification.</p></li>
+<li><p>And for the accuracy assessment, I think the Confusion Matrix is a popular and helpful way for people to test the classification results. TF,TP,NF,NP can help us analyse the results in different ways. For example, if we want to recognize the category correctly as much as possible, we should choose the model with the highest TF value. However, if we want to minimize the probability of identifying healthy people as sick people, we need to focus on the FP value.</p></li>
+</ul>
 </section>
 <section id="reference" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">7.4</span> Reference</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Krause, Johannes R., Autumn J. Oczkowski, and Elizabeth Burke Watson. “Improved mapping of coastal salt marsh habitat change at Barnegat Bay (NJ, USA) using object-based image analysis of high-resolution aerial imagery.” <em>Remote Sensing Applications: Society and Environment</em> 29 (2023): 100910.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ghorbanzadeh, Omid, et al.&nbsp;“Landslide detection using deep learning and object-based image analysis.” <em>Landslides</em> 19.4 (2022): 929-939.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Liu, Desheng, and Fan Xia. “Assessing object-based classification: advantages and limitations.” <em>Remote sensing letters</em> 1.4 (2010): 187-194.</p>
 
 
 </section>

@@ -41,10 +41,10 @@ The picture shows what a confusion matrix looks like. T stands for Ture maens th
 
 Therefore, 
 
-* A true positive (TP) is an outcome where the model correctly predicts the positive class
-* A true negative (TN) is an outcome where the model correctly predicts the negative class
+* A true positive (TP) is an outcome where the model correctly predicts the positive class.
+* A true negative (TN) is an outcome where the model correctly predicts the negative class.
 * A false positive (FP) is an outcome where the model incorrectly predicts the positive class.
-* A false positive (FN) is an outcome where the model incorrectly predicts the positive class.
+* A false positive (FN) is an outcome where the model incorrectly predicts the negative class.
 
 Moreover, by counting the sum of the rows and columns of the matrix, the different types of  accuracy can be known. For example, the PA Producer accuracy, UA User’s accuracy and OA the (overall) accuracy.
 
@@ -68,8 +68,38 @@ Cross-validation is a resampling method that uses different portions of the data
 
 ## Application
 
+* **Image classification**
+
+Basically, the Object based image analysis is seen as a way to improve the classification accuracy, especially in those area the composition of land is complex. For example, Krause et al [(2021)](https://doi.org/10.1016/j.rsase.2022.100910) improved the mapping of coastal slt marsh habitat change using object-based image analysis of high-resolution aerial imagery. The  study results shows that the suitability of high-resolution imagery for the detection of open water features. And it also demonstrates the  advantage of OBIA.
+
+![Schema of geospatial imagery processing and classification workflow](image/7workflow.jpeg)
+
+Here is a workflow of Krause and others' workflow. After the classification, a change map was carried out to illustrate the trend of salt marsh in the study area. From my point of view, the OBIA integrated the pixel with this feature, so the classified object is bigger than pixel. That could help us observe the different between before and now.
+
+Ghorbanzadeh et al [(2022)](https://link.springer.com/article/10.1007/s10346-021-01843-x) also applied OBIA to the landslide detection. Intuitive annotation of landslides from satellite imagery is based on distinct features rather than individual pixels. Hence, the study examed the feasibility of the integration framework of a DL model with rule-based object-based image analysis (OBIA) to detect landslides. 
+
+* **Confusion Matrix**
+
+In Ghorbanzadeh's research, the landslide detection results were validated by measuring the number of pixels allocated as true positive (TP), false positive (FP), and false negative (FN). The picture blow shows the assessment results.
+
+![Accuracy Assessment](image/7accuracy.png)
+
+We know that true positive (TP) means an outcome where the model correctly predicts the positive class. So we can compare the light green area to know which algorithm can recognize the most of landslide area. And the same way for FP and FN.
 
 ## Reflection
 
+* This week we learn another type of classification method in RS, the Object-based image analysis (OBIA). It differs from the pixel-based image analysis as the OBIA pay attention to a group of pixels with the same feature. It is similar to the way people interpret the image visually. Besides, by aggregating the pixel into objects, information beyond the colour can be obtained when classification. Further, OBIA can also avoid the pepper image in the end, which is definitely good for the next analysis.
+
+* However, using OBIA means that you need segment the image before carrying out classification algorithm. Therefore, the quality of segmentation well affect the final classification accuracy. Liu et al [(2010)](https://doi.org/10.1080/01431161003743173) stated that there are two main disadvanteges of OBIA, that is, (1) segmentation accuracies decrease with increasing segmentation scales and the negative impacts of under-segmentation errors become significantly large at large scales and (2) there are both advantages and limitations in using object-based classification, and their trade-off determines the overall effect of object-based classification, which is dependent on the segmentation scales.
+
+* So, in my opinion, OBIA may improve the classification results in most of cases, but the previous segmentation also increase the risk of mis-classification. 
+
+* And for the accuracy assessment, I think the Confusion Matrix is a popular and helpful way for people to test the classification results. TF,TP,NF,NP can help us analyse the results in different ways. For example, if we want to recognize the category correctly as much as possible, we should choose the model with the highest TF value. However, if we want to minimize the probability of identifying healthy people as sick people, we need to focus on the FP value.
 
 ## Reference
+
+|         Krause, Johannes R., Autumn J. Oczkowski, and Elizabeth Burke Watson. "Improved mapping of coastal salt marsh habitat change at Barnegat Bay (NJ, USA) using object-based image analysis of high-resolution aerial imagery." *Remote Sensing Applications: Society and Environment* 29 (2023): 100910.
+
+|         Ghorbanzadeh, Omid, et al. "Landslide detection using deep learning and object-based image analysis." *Landslides* 19.4 (2022): 929-939.
+
+|         Liu, Desheng, and Fan Xia. "Assessing object-based classification: advantages and limitations." *Remote sensing letters* 1.4 (2010): 187-194.
