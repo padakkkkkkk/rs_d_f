@@ -5,4 +5,6 @@ editor: visual
 
 This week is about Xaringan and Quarto
 
-1 2 3 4 5
+Here is the [Link for the slides](https://padakkkkkkk.github.io/forXaringan/)
+
+And the [Link for the repository](https://github.com/padakkkkkkk/forXaringan)

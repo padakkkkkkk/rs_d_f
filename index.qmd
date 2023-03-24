@@ -1,3 +1,10 @@
 # Preface {.unnumbered}
 
 This is a Learning Diary for CASA0023
+
+The document for each week is mainly structured in the following three parts
+
+* Key point
+* Application
+* Reflections
+
