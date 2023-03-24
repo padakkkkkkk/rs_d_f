@@ -7,4 +7,8 @@ The document for each week is mainly structured in the following three parts
 * Key point
 * Application
 * Reflections
+* Reference
 
+In this course, I learned a lot about remote sensing knowledge, especially the use of cloud platforms like GEE, which I have never experienced before. I also mastered the use of Quarto, which is also a very advance experience. But unfortunately I am still not very skilled in the operation of Xaringan.
+
+Thanks to Andy for his teaching, Wenlan and other classmates for their guidance and help.
