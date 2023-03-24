@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "巫雨洋的学习日记"
+  title: "Yuyang Wu's Learning Diary"
   author: "Yuyang Wu"
   date: "2023/1/26"
   chapters:
