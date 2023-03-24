@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>巫雨洋的学习日记 - 8&nbsp; WEEK8</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./WEEK7.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">WEEK8</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">巫雨洋的学习日记</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">WEEK1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">WEEK2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WEEK3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">WEEK4</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">WEEK5</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">WEEK6</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">WEEK7</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WEEK8.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">WEEK8</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link active" data-scroll-target="#key-points"><span class="toc-section-number">8.1</span>  Key points</a>
+  <ul class="collapse">
+  <li><a href="#urban-heat-island" id="toc-urban-heat-island" class="nav-link" data-scroll-target="#urban-heat-island"><span class="toc-section-number">8.1.1</span>  Urban Heat Island</a></li>
+  <li><a href="#remote-sensing-data-about-temperature" id="toc-remote-sensing-data-about-temperature" class="nav-link" data-scroll-target="#remote-sensing-data-about-temperature"><span class="toc-section-number">8.1.2</span>  Remote Sensing Data about Temperature</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">8.2</span>  Application</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">8.3</span>  Reflection</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="toc-section-number">8.4</span>  Reference</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">WEEK8</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="key-points" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="key-points"><span class="header-section-number">8.1</span> Key points</h2>
+<section id="urban-heat-island" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="urban-heat-island"><span class="header-section-number">8.1.1</span> Urban Heat Island</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8heatisland.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Urban Heat Island <a href="https://www.climatecentral.org/climate-matters/urban-heat-islands">(Source)</a></figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>What is urban heat island?</li>
+</ul>
+<p>Urban heat islands means that the metropolitan places are hotter than their outlying areas. This is because the construction of buildings, pavements and the usage of car results in little green area in the city. With a decreased amount of vegetation, cities lose the shade and evaporative cooling effect of trees. Besides, as dark surfaces absorb significantly more solar radiation, the metropolitan places receive more while lose back less energy than rural area. And the high density of population means more heat created by human activities like running engines and air conditioners. Last, the pollution in city increase the temperature as many forms of pollution change the radioactive properties of the atmosphere.</p>
+<p>Urban heat islands is associated with the climate change. According to Dodman et al.<a href="https://www.ipcc.ch/report/ar6/wg2/">(2022)</a>, climate change is not a cause but an amplifier of the urban heat island effect. According to <a href="https://www.epa.gov/heatislands/climate-change-and-heat-islands">a report of EPA</a>, in many areas of the U.S., steadily increasing warming trends are intensifying already higher temperatures in heat island areas. This continued warming is expected to worsen heat islands in the future.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8usa.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Annual Heat Wave Frequency and Season Length in 50 Large U.S. Cities, 1961–2019 <a href="https://www.epa.gov/heatislands/climate-change-and-heat-islands">(Source)</a></figcaption><p></p>
+</figure>
+</div>
+<p>The maps show that the unusually hot days in USA have steadily increased in most of the cities. This may cause serious health problem of citizens, especially to those who often work outside. When people are exposed to extreme heat, they can suffer from potentially deadly illnesses, such as heat exhaustion and heat stroke. Hot temperatures can also contribute to deaths from heart attacks, strokes, and other forms of cardiovascular disease. Extreme heat events strain high-risk populations disproportionately <a href="https://health2016.globalchange.gov/temperature-related-death-and-illness">(Sarofim et al., 2016)</a></p>
+<ul>
+<li>Beat The Heat Handbook</li>
+</ul>
+<p>So, what we could do to deal with Urban heat island? We can easily come up with the idea like planting more trees, reducing the emission of carbon dioxide, mitigating the pollution and so on. However, the most significant thing is about how to achieve them? Can urban policy be helpful?</p>
+<p><strong>Beating the Heat: A Sustainable Cooling Handbook for Cities</strong> is a guide offers planners an encyclopaedia of proven options to help cool cities. According to the book, the whole-system approach to optimally address urban cooling can be divided into 3 part. 1) Reduce heat at the urban scale, 2) Reduce cooling needs in buildings, 3) Serve cooling needs in buildings efficiently.And in each part, it provides some suggertion and case examples.</p>
+<p>For instance, in Seoul, Republic of Korea, An effort to restore the Cheonggyecheon stream that runs through the city replaced 5.8 kilometres of elevated expressway that covered the stream with a mixed-use waterfront corridor. The waterfront corridor decreased temperatures by 3.3°C to 5.9°C compared to a parallel road a few blocks away.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8Seoul.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">The waterfront corridor in Seoul</figcaption><p></p>
+</figure>
+</div>
+<p>It is useful for government and other organization to know, what is the good way to deal with urban heat island. However, the policies can only give you conceptions, the vague direction. This kind of handbook can not help us understand how to execute. How we can measure the heat index? What specific software or hardware we need to use? Are there any planning rules against what we try to do? How much and how long it will take to achieve the idea?</p>
+<ul>
+<li>Approaching projects</li>
+</ul>
+<p>Referring to a specific policy, to execute a project we need to know:</p>
+<p>First, what is our research question, what kind of problem do we need to address? More particular, which index do we need to measure?</p>
+<p>Second, what data should be included for our metrics? And for the EO data, which scale or resolution are the most appropriate?</p>
+<p>And then, what is our methodology? What is the criteria for the results….</p>
+</section>
+<section id="remote-sensing-data-about-temperature" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="remote-sensing-data-about-temperature"><span class="header-section-number">8.1.2</span> Remote Sensing Data about Temperature</h3>
+<p>Remote Sensing data can be useful to explore temperature across urban areas, here we try to use MODIS data to do some pratice.</p>
+<ul>
+<li>MODIS</li>
+</ul>
+<p>Moderate Resolution Imaging Spectroradiometer <a href="https://modis.gsfc.nasa.gov/about/">(MODIS)</a>, is a key instrument aboard the Terra (originally known as EOS AM-1) and Aqua (originally known as EOS PM-1) satellites. Terra MODIS and Aqua MODIS are viewing the entire Earth’s surface every one to two days, obtaining data in 36 spectral bands with wavelengths ranging from 0.4 to 14.385 μm <a href="https://www.sciencedirect.com/book/9780128158227/spatiotemporal-analysis-of-air-pollution-and-its-application-in-public-health">(Li et al.&nbsp;2019)</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8MODIS1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">MODIS in GEE</figcaption><p></p>
+</figure>
+</div>
+<p>Here we use Google Earth Engine to do upload MODIS data. You can find MODIS after cliking the <code>Browse the data catalog</code>. in the exploration page, a range of MODIS products can be found.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8MODIS2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">MODIS in GEE 2</figcaption><p></p>
+</figure>
+</div>
+<p>We chose MOD11A2.061 Terra Land Surface Temperature and Emissivity 8-Day Global 1km, and using the sample code blow, the data was uploaded successfully.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> dataset <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'MODIS/061/MOD11A2'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                  <span class="op">.</span><span class="fu">filter</span>(ee<span class="op">.</span><span class="at">Filter</span><span class="op">.</span><span class="fu">date</span>(<span class="st">'2018-01-01'</span><span class="op">,</span> <span class="st">'2018-05-01'</span>))<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> landSurfaceTemperature <span class="op">=</span> dataset<span class="op">.</span><span class="fu">select</span>(<span class="st">'LST_Day_1km'</span>)<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> landSurfaceTemperatureVis <span class="op">=</span> {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">min</span><span class="op">:</span> <span class="fl">14000.0</span><span class="op">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">max</span><span class="op">:</span> <span class="fl">16000.0</span><span class="op">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">palette</span><span class="op">:</span> [</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'040274'</span><span class="op">,</span> <span class="st">'040281'</span><span class="op">,</span> <span class="st">'0502a3'</span><span class="op">,</span> <span class="st">'0502b8'</span><span class="op">,</span> <span class="st">'0502ce'</span><span class="op">,</span> <span class="st">'0502e6'</span><span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'0602ff'</span><span class="op">,</span> <span class="st">'235cb1'</span><span class="op">,</span> <span class="st">'307ef3'</span><span class="op">,</span> <span class="st">'269db1'</span><span class="op">,</span> <span class="st">'30c8e2'</span><span class="op">,</span> <span class="st">'32d3ef'</span><span class="op">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'3be285'</span><span class="op">,</span> <span class="st">'3ff38f'</span><span class="op">,</span> <span class="st">'86e26f'</span><span class="op">,</span> <span class="st">'3ae237'</span><span class="op">,</span> <span class="st">'b5e22e'</span><span class="op">,</span> <span class="st">'d6e21f'</span><span class="op">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'fff705'</span><span class="op">,</span> <span class="st">'ffd611'</span><span class="op">,</span> <span class="st">'ffb613'</span><span class="op">,</span> <span class="st">'ff8b13'</span><span class="op">,</span> <span class="st">'ff6e08'</span><span class="op">,</span> <span class="st">'ff500d'</span><span class="op">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ff0000'</span><span class="op">,</span> <span class="st">'de0101'</span><span class="op">,</span> <span class="st">'c21301'</span><span class="op">,</span> <span class="st">'a71001'</span><span class="op">,</span> <span class="st">'911003'</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">setCenter</span>(<span class="fl">6.746</span><span class="op">,</span> <span class="fl">46.529</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    landSurfaceTemperature<span class="op">,</span> landSurfaceTemperatureVis<span class="op">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Land Surface Temperature'</span>)<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8MODIS3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">MODIS in GEE 3</figcaption><p></p>
+</figure>
+</div>
+<p>With the help of Vector data , we can focus on a specific area. Here we choose Beijin City. (The code blow is just some of the essential part)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> dataset <span class="op">=</span> ee<span class="op">.</span><span class="fu">FeatureCollection</span>(<span class="st">"FAO/GAUL/2015/level1"</span>)<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> dataset_style <span class="op">=</span> dataset<span class="op">.</span><span class="fu">style</span>({</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> <span class="st">'1e90ff'</span><span class="op">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">fillColor</span><span class="op">:</span> <span class="st">'00000000'</span><span class="op">,</span>  <span class="co">// with alpha set for partial transparency</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">//  lineType: 'dotted',</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">//  pointSize: 10,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">//  pointShape: 'circle'</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(dataset<span class="op">,</span> {}<span class="op">,</span> <span class="st">'Second Level Administrative Units_1'</span>)<span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> Beijing <span class="op">=</span> dataset<span class="op">.</span><span class="fu">filter</span>(<span class="st">'ADM1_CODE == 899'</span>)<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(Beijing<span class="op">,</span> {}<span class="op">,</span> <span class="st">'Beijing'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And we use 2 types of MODIS data,<a href="https://lpdaac.usgs.gov/products/myd11a1v006/">MYD11A1.006 Aqua Land Surface Temperature and Emissivity Daily Global 1km</a>, and <a href="https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MOD11A1">MOD11A1.006 Terra Land Surface Temperature and Emissivity Daily Global 1km</a></p>
+<p>We use the <code>MODISscale</code> function because the MODIS data needs to have the scale factor applied</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">MODISscale</span>(image) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> temp <span class="op">=</span> image<span class="op">.</span><span class="fu">select</span>(<span class="st">'LST_.*'</span>)<span class="op">.</span><span class="fu">multiply</span>(<span class="fl">0.02</span>)<span class="op">.</span><span class="fu">subtract</span>(<span class="fl">273.1</span>)<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> image<span class="op">.</span><span class="fu">addBands</span>(temp<span class="op">,</span> <span class="kw">null</span><span class="op">,</span> <span class="kw">true</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> MODIS_Aqua_day <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'MODIS/061/MYD11A1'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2022-01-01'</span><span class="op">,</span> <span class="st">'2022-10-10'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(ee<span class="op">.</span><span class="at">Filter</span><span class="op">.</span><span class="fu">calendarRange</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span><span class="st">'month'</span>))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">'LST_Day_1km'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(MODISscale)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterBounds</span>(Beijing)<span class="op">;</span>  <span class="co">// Intersecting ROI;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> MODIS_Terra_day <span class="op">=</span> ee<span class="op">.</span><span class="fu">ImageCollection</span>(<span class="st">'MODIS/061/MOD11A1'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterDate</span>(<span class="st">'2022-01-01'</span><span class="op">,</span> <span class="st">'2022-10-10'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(ee<span class="op">.</span><span class="at">Filter</span><span class="op">.</span><span class="fu">calendarRange</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span><span class="st">'month'</span>))</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filterBounds</span>(Beijing)  <span class="co">// Intersecting ROI;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">select</span>(<span class="st">'LST_Day_1km'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(MODISscale)<span class="op">;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Merge the two collections and calculate a mean summer temperature</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> mean_aqua_terra <span class="op">=</span> MODIS_Aqua_day<span class="op">.</span><span class="fu">merge</span>(MODIS_Terra_day)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">reduce</span>(ee<span class="op">.</span><span class="at">Reducer</span><span class="op">.</span><span class="fu">mean</span>())</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">clip</span>(Beijing)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(mean_aqua_terra<span class="op">,</span> landSurfaceTemperatureVis<span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MODIS Land Surface Temperature'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then choose the palette to show the map</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> landSurfaceTemperatureVis <span class="op">=</span> {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">min</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">max</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">palette</span><span class="op">:</span> [</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'040274'</span><span class="op">,</span> <span class="st">'040281'</span><span class="op">,</span> <span class="st">'0502a3'</span><span class="op">,</span> <span class="st">'0502b8'</span><span class="op">,</span> <span class="st">'0502ce'</span><span class="op">,</span> <span class="st">'0502e6'</span><span class="op">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'0602ff'</span><span class="op">,</span> <span class="st">'235cb1'</span><span class="op">,</span> <span class="st">'307ef3'</span><span class="op">,</span> <span class="st">'269db1'</span><span class="op">,</span> <span class="st">'30c8e2'</span><span class="op">,</span> <span class="st">'32d3ef'</span><span class="op">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'3be285'</span><span class="op">,</span> <span class="st">'3ff38f'</span><span class="op">,</span> <span class="st">'86e26f'</span><span class="op">,</span> <span class="st">'3ae237'</span><span class="op">,</span> <span class="st">'b5e22e'</span><span class="op">,</span> <span class="st">'d6e21f'</span><span class="op">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'fff705'</span><span class="op">,</span> <span class="st">'ffd611'</span><span class="op">,</span> <span class="st">'ffb613'</span><span class="op">,</span> <span class="st">'ff8b13'</span><span class="op">,</span> <span class="st">'ff6e08'</span><span class="op">,</span> <span class="st">'ff500d'</span><span class="op">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ff0000'</span><span class="op">,</span> <span class="st">'de0101'</span><span class="op">,</span> <span class="st">'c21301'</span><span class="op">,</span> <span class="st">'a71001'</span><span class="op">,</span> <span class="st">'911003'</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">.</span><span class="fu">addLayer</span>(mean_aqua_terra<span class="op">,</span> landSurfaceTemperatureVis<span class="op">,</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MODIS Land Surface Temperature'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8beijin.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Temperature of Beijin</figcaption><p></p>
+</figure>
+</div>
+<p>In GEE, we can use temperature data to do other analysis such as the time series analysis, trend analysis and heat index calculation.</p>
+</section>
+</section>
+<section id="application" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="application"><span class="header-section-number">8.2</span> Application</h2>
+<p>Temperature data is a good product to moniture the climate in the city. It can help us understand climate change, the urban heat island, greenhouse effect and other urban problems. And also can be used in monitoring urban ecosystems, giving suggestion to urban planning.</p>
+<p>Here we refer some paper to have a look at how MODIS data can be use in urban study.</p>
+<ul>
+<li>Estimate the air surface temperature</li>
+</ul>
+<p>Air surface temperature (<span class="math inline">\(T_{air}\)</span>) is an important parameter for a wide range of applications such as vector-borne disease bionomics, hydrology and climate change studies. These data are generally collected through observations at meteorological stations, so they have limitations such as the scale is not fine enough. And not all areas have the ability to build a meteorological stations, so some developed areas often lack such data. The use of remote sensing data can help to overcome this problem by provide estimates of surface air temperature. For example，Benali et al., <a href="https://doi.org/10.1016/j.rse.2012.04.024">(2012)</a> accurately estimated <span class="math inline">\(T_{max}\)</span>, <span class="math inline">\(T_{min}\)</span> and <span class="math inline">\(T_{abg}\)</span> for a 10 year period based on remote sensing—Land Surface Temperature (LST) data obtained from MODIS—and auxiliary data using a statistical approach. Vancutsem et al., <a href="https://doi.org/10.1016/j.rse.2009.10.002">(2010)</a> explored the possibility of retrieving high-resolution Ta data from the Moderate Resolution Imaging Spectroradiometer (MODIS) Ts products over different ecosystems in Africa.</p>
+<ul>
+<li>Monitoring agricultural drought</li>
+</ul>
+<p>The impact of temperature on agriculture is very significant. Therefore, monitoring drought using remote sensing data is important for water resource planning and management to mitigate impacts on regional agriculture. Son et al.,<a href="https://doi.org/10.1016/j.jag.2012.03.014">(2012)</a> explored the applicability of monthly MODIS normalized difference vegetation index (NDVI) and land surface temperature (LST) data for agricultural drought monitoring in LMB in the dry season from November 2001 to April 2010. The data were processed using the temperature vegetation dryness index (TVDI), calculated by parameterizing the relationship between the MODIS NDVI and LST data. Their study manifested that there is a strong correlation between TVDI and AMSR-E soil moisture data (data used for testing) calculated from remote sensing data. Therefore, it is of great significance to use remote sensing data to predict drought in areas where soil moisture measurement cannot be achieved.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/8drought.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Drought Area</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="reflection" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">8.3</span> Reflection</h2>
+<ul>
+<li><p>This week we took a detailed look at one type of remote sensing data—data related to temperature. This is a very important part of EO data. Because traditional temperature data needs to be collected by some observation stations, which involves expensive construction costs and labor costs. And it is impossible to achieve fine-scale collection. Remote sensing data as a kind of EO data can solve this problem well. By building related sensors on satellites, the observation of temperature can be realized, and temperature data can be provided for the whole world. This is conducive to solving various climate problems and providing assistance for agricultural production.</p></li>
+<li><p>By reading the literature, taking MODIS data as an example，urban heat island (UHI), air temperature estimation/mapping (Ta estimation), soil moisture, evapotranspiration estimation, and drought monitoring/estimation were the most popular applications of MODIS LST data.This type of remote sensing data has achieved remarkable results in the fields of environment, agriculture, biology and social sciences <a href="https://doi.org/10.1117/1.JRS.12.041501">(Phan et al., 2018)</a>. In spite of the advantages of MODIS LST data, some limitations remain, such as the cloud cover effect (included missing pixels, as well as the pixels covered by thin cloud) and the use of the MODIS data quality file (QC file).</p></li>
+</ul>
+</section>
+<section id="reference" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">8.4</span> Reference</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarofim, M.C., S. Saha, M.D.&nbsp;Hawkins, D.M. Mills, J. Hess, R. Horton, P. Kinney, J. Schwartz, and A. St.&nbsp;Juliana. 2016. Temperature-related death and illness. In The Impacts of Climate Change on Human Health in the United States: A Scientific Assessment. U.S. <em>Global Change Research Program, Washington, DC</em>. pp.&nbsp;43–68.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Li, Lixin, Xiaolu Zhou, and Weitian Tong, eds.&nbsp;Spatiotemporal analysis of air pollution and its application in public health. <em>Elsevier</em>, 2019.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vancutsem, C., Ceccato, P., Dinku, T., &amp; Connor, S. J. (2010). Evaluation of MODIS land surface temperature data to estimate air temperature in different ecosystems over Africa. <em>Remote Sensing of Environment</em>, 114(2), 449-465.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Benali, A., Carvalho, A. C., Nunes, J. P., Carvalhais, N., &amp; Santos, A. (2012). Estimating air surface temperature in Portugal using MODIS LST data. <em>Remote Sensing of Environment</em>, 124, 108-121.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Son, N. T., Chen, C. F., Chen, C. R., Chang, L. Y., &amp; Minh, V. Q. (2012). Monitoring agricultural drought in the Lower Mekong Basin using MODIS NDVI and land surface temperature data. <em>International Journal of Applied Earth Observation and Geoinformation</em>, 18, 417-427.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./WEEK7.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">WEEK7</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
